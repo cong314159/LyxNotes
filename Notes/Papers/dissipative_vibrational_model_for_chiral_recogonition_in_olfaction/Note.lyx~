@@ -383,7 +383,6 @@ Thus,
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Next, deal with 
 \begin_inset Formula $\hat{U}^{\dagger}\hat{H}_{o}\hat{U}$
@@ -414,8 +413,110 @@ exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\ri
 \end_inset
 
 
+\begin_inset Formula 
+\[
+=-\frac{1}{2}\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} \left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} 
+\]
+
+\end_inset
+
+Focus on 
+\begin_inset Formula $\delta\hat{\sigma}_{x}\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} $
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\delta\hat{\sigma}_{x}\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} =\delta\sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{x}\hat{\sigma}_{y}^{k}
+\]
+
+\end_inset
+
+Then focus on 
+\begin_inset Formula $\hat{\sigma}_{x}\hat{\sigma}_{y}^{k}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{\sigma}_{x}\hat{\sigma}_{y}^{k}=\hat{\sigma}_{x}\hat{\sigma}_{y}\hat{\sigma}_{y}^{k-1}=i\hat{\sigma}_{z}\hat{\sigma}_{y}^{k-1}=i\hat{\sigma}_{z}\hat{\sigma}_{y}\hat{\sigma}_{y}^{k-2}=\hat{\sigma}_{x}\hat{\sigma}_{y}^{k-2}
+\]
+
+\end_inset
+
+In the summation, whenever we have even number of 
+\begin_inset Formula $\hat{\sigma}_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\sigma}_{x}$
+\end_inset
+
+ remains; whenever we have odd number of 
+\begin_inset Formula $\hat{\sigma}_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $i\hat{\sigma}_{z}$
+\end_inset
+
+ remains.
+ Then:
+\begin_inset Formula 
+\[
+=\delta\left\{ \sum_{k=0,2,4...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{x}+\sum_{k=1,3,5...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}i\hat{\sigma}_{z}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\delta\left\{ \sum_{k=0,2,4...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{x}-\sum_{k=1,3,5...}\frac{1}{k!}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}\right\} 
+\]
+
+\end_inset
+
+Continue to the next part 
+\begin_inset Formula $\omega_{z}\hat{\sigma}_{z}\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} $
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\omega_{z}\hat{\sigma}_{z}\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} =\omega_{z}\sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}\hat{\sigma}_{y}^{k}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\omega_{z}\left\{ \sum_{k=0,2,4...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}+\sum_{k=1,3,5...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}(-i\hat{\sigma}_{x})\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\omega_{z}\left\{ \sum_{k=0,2,4...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}+\sum_{k=1,3,5...}\frac{1}{k!}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{x}\right\} 
+\]
+
+\end_inset
+
+
 \end_layout
 
+\begin_layout Itemize
+Question: commute sigma
+\end_layout
+
+\begin_layout Itemize
+Question: Is there a relation omega z and delta
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_deeper
 \end_body
