@@ -7,6 +7,7 @@
 \textclass article
 \begin_preamble
 \usepackage{braket}
+\usepackage{cancel}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -636,7 +637,7 @@ and
 
 \end_inset
 
-Part I and Part II will be added.
+Part I and Part II will be summed.
  From Part I:
 \begin_inset Formula 
 \[
@@ -694,6 +695,78 @@ Then Part I:
 \end_inset
 
 From Part II:
+\begin_inset Formula 
+\[
+\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} i\delta\hat{\sigma}_{z}=i\delta\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\delta}_{y}^{k}\hat{\sigma}_{z}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=i\delta\left\{ \sum_{k=0}^{\infty}\frac{1}{\left(2k\right)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{2k}\hat{\sigma}_{z}+i\sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{2k+1}\hat{\sigma}_{x}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=i\delta\hat{\sigma}_{z}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+\delta\hat{\sigma}_{x}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} i\omega_{z}\hat{\sigma}_{x}=-i\omega_{z}\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\delta}_{y}^{k}\hat{\sigma}_{x}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-i\omega_{z}\left\{ \sum_{k=0}^{\infty}\frac{1}{(2k)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{2k}\hat{\sigma}_{x}-i\sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{2k+1}\hat{\sigma}_{z}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-i\omega_{z}\hat{\sigma}_{x}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+\omega_{z}\hat{\sigma}_{z}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+Then Part II:
+\begin_inset Formula 
+\[
+\left\{ i\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+Part I and Part II together:
+\begin_inset Formula 
+\[
+\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cosh^{2}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+i\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+i\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)sinh^{2}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+From the identity of hyperbolic function:
+\begin_inset Formula 
+\[
+\cancel{\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cos^{2}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sin\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]cos\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)cos\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]sin\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]-\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)sin^{2}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
