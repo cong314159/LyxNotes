@@ -439,7 +439,7 @@ Then focus on
 :
 \begin_inset Formula 
 \[
-\hat{\sigma}_{x}\hat{\sigma}_{y}^{k}=\hat{\sigma}_{x}\hat{\sigma}_{y}\hat{\sigma}_{y}^{k-1}=i\hat{\sigma}_{z}\hat{\sigma}_{y}^{k-1}=i\hat{\sigma}_{z}\hat{\sigma}_{y}\hat{\sigma}_{y}^{k-2}=\hat{\sigma}_{x}\hat{\sigma}_{y}^{k-2}
+\hat{\sigma}_{x}\hat{\sigma}_{y}^{k}=\hat{\sigma}_{x}\hat{\sigma}_{y}\hat{\sigma}_{y}^{k-1}=i\hat{\sigma}_{z}\hat{\sigma}_{y}^{k-1}=i\hat{\sigma}_{z}\hat{\sigma}_{y}\hat{\sigma}_{y}^{k-2}=\hat{\sigma}_{x}\hat{\sigma}_{y}^{k-2}\left(=(-1)^{k}\hat{\sigma}_{y}^{k}\hat{\sigma}_{x}\right)
 \]
 
 \end_inset
@@ -484,7 +484,7 @@ Continue to the next part
 :
 \begin_inset Formula 
 \[
-\omega_{z}\hat{\sigma}_{z}\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} =\omega_{z}\sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}\hat{\sigma}_{y}^{k}
+\omega_{z}\hat{\sigma}_{z}\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\sigma}_{y}\right]^{k}\right\} =\omega_{z}\sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}\hat{\sigma}_{y}^{k}
 \]
 
 \end_inset
@@ -509,13 +509,162 @@ Continue to the next part
 \end_layout
 
 \begin_layout Itemize
-Question: commute sigma
+Two approaches from here, either go with Taylor expansion, or go with commute
+ 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-Question: Is there a relation omega z and delta
+\begin_deeper
+\begin_layout Enumerate
+Taylor expansion.
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+The Taylor expansion of 
+\begin_inset Formula $sinh(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $cosh(x)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+sinh(x)=\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+cosh(x)=\sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!}
+\]
+
+\end_inset
+
+Continue with the derivation:
+\begin_inset Formula 
+\[
+=\delta\left\{ \sum_{k=0,2,4...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{x}-\sum_{k=1,3,5...}\frac{1}{k!}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\delta\left\{ \sum_{k=0}^{\infty}\frac{1}{(2k)!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{2k}\hat{\sigma}_{x}-\sum_{k=0}^{\infty}\frac{1}{\left(2k+1\right)!}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{2k+1}\hat{\sigma}_{z}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\delta\left\{ cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\sigma_{x}-sinh\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\sigma_{z}\right\} 
+\]
+
+\end_inset
+
+Second part:
+\begin_inset Formula 
+\[
+=\omega_{z}\left\{ \sum_{k=0,2,4...}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{z}+\sum_{k=1,3,5...}\frac{1}{k!}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{x}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\omega_{z}\left\{ \sum_{k=0}^{\infty}\frac{1}{\left(2k\right)!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{2k}\hat{\sigma}_{z}+\sum_{k=0}^{\infty}\frac{1}{\left(2k+1\right)!}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{\left(2k+1\right)}\hat{\sigma}_{x}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\omega_{z}\left\{ cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\sigma_{z}+sinh\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\sigma_{x}\right\} 
+\]
+
+\end_inset
+
+Then:
+\begin_inset Formula 
+\[
+\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} =\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+\left(-\delta\hat{\sigma}_{z}+\omega_{z}\hat{\sigma}_{x}\right)sinh\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+Continue:
+\begin_inset Formula 
+\[
+\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} \left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} \left\{ \left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+\left(-\delta\hat{\sigma}_{z}+\omega_{z}\hat{\sigma}_{x}\right)sinh\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+Split the terms into two parts
+\begin_inset Formula 
+\begin{equation}
+\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\label{Part I}
+\end{equation}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{equation}
+\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\left(-\delta\hat{\sigma}_{z}+\omega_{z}\hat{\sigma}_{x}\right)sinh\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\label{Part II}
+\end{equation}
+
+\end_inset
+
+From Part I:
+\begin_inset Formula 
+\[
+\left\{ \sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}\right\} \delta\hat{\sigma}_{x}=\delta\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]^{k}\hat{\sigma}_{y}^{k}\hat{\sigma}_{x}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\delta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Cummute 
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_deeper
 \end_deeper
