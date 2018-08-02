@@ -769,7 +769,7 @@ From the identity of hyperbolic function:
 
 \begin_inset Formula 
 \[
-\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cos^{2}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sin(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})-\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)sin^{2}\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cos\left(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}\right)-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sin(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})
 \]
 
 \end_inset
