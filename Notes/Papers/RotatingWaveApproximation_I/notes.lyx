@@ -237,6 +237,32 @@ b_{2}exp\left\{ -i\left[E_{2}(t-t_{0})-\underline{\mu}_{22}\cdot\int_{t0}^{t}\un
 Notation what is the underline?
 \end_layout
 
+\begin_layout Itemize
+From Schrodinger picture to interaciton picture:
+\begin_inset Formula 
+\[
+LHS=i\left(\begin{array}{c}
+\left(\frac{d}{dt}b_{1}\right)exp\left\{ -i\left[E_{1}(t-t_{0})-\underline{\mu}_{11}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} +b_{1}\frac{d}{dt}exp\left\{ -i\left[E_{1}(t-t_{0})-\underline{\mu}_{11}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} \\
+\left(\frac{d}{dt}b_{2}\right)exp\left\{ -i\left[E_{2}(t-t_{0})-\underline{\mu}_{22}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} +b_{2}\frac{d}{dt}exp\left\{ -i\left[E_{2}(t-t_{0})-\underline{\mu}_{22}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} 
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=i\left(\begin{array}{c}
+\left(\frac{d}{dt}b_{1}\right)exp\left\{ -i\left[E_{1}(t-t_{0})-\underline{\mu}_{11}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} +b_{1}exp\left\{ -i\left[E_{1}(t-t_{0})-\underline{\mu}_{11}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} \left\{ -i\left[E_{1}-\underline{\mu}_{11}\cdot\underline{\varepsilon}(t)\right]\right\} \\
+\left(\frac{d}{dt}b_{2}\right)exp\left\{ -i\left[E_{2}(t-t_{0})-\underline{\mu}_{22}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} +b_{2}exp\left\{ -i\left[E_{2}(t-t_{0})-\underline{\mu}_{22}\cdot\int_{t0}^{t}\underline{\varepsilon}(t')dt'\right]\right\} \left\{ -i\left[E_{2}-\underline{\mu}_{22}\cdot\underline{\varepsilon}(t)\right]\right\} 
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \end_body
 \end_document

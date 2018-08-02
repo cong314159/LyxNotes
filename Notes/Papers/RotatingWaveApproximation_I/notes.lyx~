@@ -142,7 +142,7 @@ Theoretical development
 \begin_deeper
 \begin_layout Itemize
 Time-dependent Schrodinger equation for a two-level system interacting with
- a pulsed laswer in the semiclassical dipole approximation is:
+ a pulsed laser in the semiclassical dipole approximation is:
 \begin_inset Formula 
 \[
 i\frac{d}{dt}\left(\begin{array}{c}

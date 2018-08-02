@@ -774,6 +774,18 @@ From the identity of hyperbolic function:
 
 \end_inset
 
+Then 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{H}_{o}\hat{U}$
+\end_inset
+
+ becomes:
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\hat{H}_{o}\hat{U}=exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]\left\{ \left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cos\left(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}\right)-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sin(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right\} exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\]
+
+\end_inset
+
 
 \end_layout
 

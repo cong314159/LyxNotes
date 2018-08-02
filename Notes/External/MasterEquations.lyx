@@ -1,0 +1,7410 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[margin=1in]{geometry}
+\usepackage{braket}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Time-convolutionless master equation for mesoscopic electron-phonon systems
+\end_layout
+
+\begin_layout Itemize
+These notes are developed from:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A.
+ Pereverzev, and E.R.
+ Bittner, 
+\begin_inset Quotes eld
+\end_inset
+
+Time-convolutionless master equation for mesoscopic electron-phonon systems,
+\begin_inset Quotes erd
+\end_inset
+
+ J Chem Phys 
+\series bold
+125
+\series default
+, 104906 (2006); doi: 10.1063/1.2348869
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Start with the Hamiltonian for the electronic system coupled to oscillators:
+\begin_inset Formula 
+\[
+\hat{H}=\sum_{n}\epsilon_{n}\ket{n}\bra{n}+\sum_{nmi}g_{nmi}\ket{n}\bra{m}\left(\hat{a}_{i}^{\dagger}+a_{i}\right)+\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ket{n}$
+\end_inset
+
+ are electronic states, and 
+\begin_inset Formula $\hat{a}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{a}_{i}^{\dagger}$
+\end_inset
+
+ are annihilation and creation operators for the 
+\begin_inset Formula $i$
+\end_inset
+
+-th oscillator
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Divide this into a diagonal part 
+\begin_inset Formula $\hat{H}_{0}$
+\end_inset
+
+ and an off-diagonal part 
+\begin_inset Formula $\hat{V}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{0}+\hat{V}
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\hat{H}_{0}=\sum_{n}\epsilon_{n}\ket{n}\bra{n}+\sum_{nni}g_{nni}\ket{n}\bra{n}\left(\hat{a}_{i}^{\dagger}+a_{i}\right)+\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+\hat{V}=\sum_{nmi,n\neq m}g_{nmi}\ket{n}\bra{m}\left(\hat{a}_{i}^{\dagger}+a_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is useful because:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Often 
+\begin_inset Formula $g_{nmi}$
+\end_inset
+
+ are small compared to 
+\begin_inset Formula $g_{nni}$
+\end_inset
+
+ so that 
+\begin_inset Formula $\hat{V}$
+\end_inset
+
+ can be treated as a perturbation
+\end_layout
+
+\begin_layout Itemize
+Often, an initial density matrix 
+\begin_inset Formula $\hat{\rho}\left(0\right)$
+\end_inset
+
+ can be chosen to commute with 
+\begin_inset Formula $\hat{H}_{0}$
+\end_inset
+
+, resulting in simpler forms of the master equations
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Diaognalization:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Diagonalize 
+\begin_inset Formula $\hat{H}_{0}$
+\end_inset
+
+ with respect to the normal mode degrees of freedom
+\begin_inset Formula 
+\begin{align*}
+\hat{U} & =\exp\left(-\sum_{ni}\left(\frac{g_{nni}}{\omega_{i}}\right)\ket{n}\bra{n}\left(\hat{a}_{i}^{\dagger}+a_{i}\right)\right)\\
+ & =\sum_{n}\ket{n}\bra{n}\exp\left(-\sum_{ni}\left(\frac{g_{nni}}{\omega_{i}}\right)\left(\hat{a}_{i}^{\dagger}+a_{i}\right)\right)
+\end{align*}
+
+\end_inset
+
+to obtain 
+\begin_inset Formula $\tilde{H}_{0}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\tilde{H}_{0}=\hat{U}^{-1}\hat{H}_{0}\hat{U}=\sum_{n}\tilde{\epsilon}_{n}\ket{n}\bra{n}+\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}
+\]
+
+\end_inset
+
+with renormalized electronic energies
+\begin_inset Formula 
+\[
+\tilde{\epsilon}_{n}=\epsilon_{n}-\sum_{i}\frac{g_{nmi}^{2}}{\omega_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Transform 
+\begin_inset Formula $\hat{V}$
+\end_inset
+
+ to 
+\begin_inset Formula $\tilde{V}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\tilde{V}=\hat{U}^{-1}\hat{V}\hat{U}=\sum_{\stackrel{n\neq m}{nmi}}\left(g_{nmi}\ket{n}\bra{m}\left(\hat{a}_{i}^{\dagger}+a_{i}-\frac{2g_{nni}}{\omega_{i}}\right)\exp\left(\sum_{j}\frac{g_{nnj}-g_{mmj}}{\omega_{j}}\left(\hat{a}_{j}^{\dagger}-a_{j}\right)\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A more compact form for 
+\begin_inset Formula $\tilde{V}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\tilde{V}=\sum_{\stackrel{n\neq m}{nmi}}\ket{n}\bra{m}\hat{M}_{nmi},
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\hat{M}_{nmi}=g_{nmi}\left(\hat{a}_{i}^{\dagger}+a_{i}-\frac{2g_{nni}}{\omega_{i}}\right)\exp\left(\sum_{j}\frac{g_{nnj}-g_{mmj}}{\omega_{j}}\left(\hat{a}_{j}^{\dagger}-a_{j}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The reorganization energy 
+\begin_inset Formula $E_{nm}^{\lambda}$
+\end_inset
+
+ is the sum
+\begin_inset Formula 
+\[
+E_{nm}^{\lambda}=\sum_{j}\frac{\left(g_{nnj}-g_{mmj}\right)^{2}}{\omega_{j}^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Energy difference between the renormalized energies:
+\begin_inset Formula 
+\[
+\Delta E_{nm}=\tilde{\epsilon}_{n}-\tilde{\epsilon}_{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Initial state 
+\begin_inset Formula $\hat{\rho}\left(0\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Take the initial density matrix
+\begin_inset Formula 
+\[
+\hat{\rho}\left(0\right)=\ket{n}\bra{n}\frac{\exp\left(-\beta\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}+\sum_{i}g_{nmi}\left(\hat{a}_{i}^{\dagger}+a_{i}\right)\right)}{\text{Tr}\,\left(\exp\left(-\beta\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}+\sum_{i}g_{nmi}\left(\hat{a}_{i}^{\dagger}+a_{i}\right)\right)\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the electronic system prepared in one state 
+\begin_inset Formula $\ket{n}$
+\end_inset
+
+, and the oscillators in displaced equilibrium
+\end_layout
+
+\begin_layout Itemize
+The electronic density operator 
+\begin_inset Formula $\ket{n}\bra{n}$
+\end_inset
+
+ commutes with the unitary operator 
+\begin_inset Formula $\hat{U}$
+\end_inset
+
+ so that the transformed intial density operator is
+\begin_inset Formula 
+\[
+\tilde{\rho}_{0}=\ket{n}\bra{n}\frac{\exp\left(-\beta\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}\right)}{\text{Tr}\,\left(\exp\left(-\beta\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}\right)\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Development of a Master Equation
+\end_layout
+
+\begin_layout Itemize
+Breuer and Petruccione have a projection operator formalism that is used
+ tod evelop the master equation
+\end_layout
+
+\begin_layout Itemize
+Let there be projection operator 
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+ such that th einitial total density matrix satisfies
+\begin_inset Formula 
+\[
+\hat{\rho}\left(0\right)=\mathcal{P}\hat{\rho}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The projection 
+\begin_inset Formula $\mathcal{P}\hat{\rho}\left(t\right)$
+\end_inset
+
+ may be shown to solve at least two different master equations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Nakajima-Zwanzig (NZ) equation
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{P}\hat{\rho}\left(t\right)}{\partial t}=-\int_{0}^{t}d\tau\mathcal{K}^{\text{NZ}}\left(t-\tau\right)\mathcal{P}\hat{\rho}\left(\tau\right)\label{eq:Nakajima-Zwanzig}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The time-convolutionless (CL) master equation
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{P}\hat{\rho}\left(t\right)}{\partial t}=-\int_{0}^{t}d\tau\mathcal{K}^{\text{CL}}\left(\tau\right)\mathcal{P}\hat{\rho}\left(\tau\right)\label{eq:ConvolutionlessMaster}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Nakajima-Zwanzig"
+
+\end_inset
+
+) is better known than (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ConvolutionlessMaster"
+
+\end_inset
+
+), we derive (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ConvolutionlessMaster"
+
+\end_inset
+
+) from (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Nakajima-Zwanzig"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Apply the Laplace transform to both sides of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Nakajima-Zwanzig"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+s\mathcal{P}\hat{\rho}\left(s\right)-\mathcal{P}\hat{\rho}\left(0\right)=-\mathcal{K}\left(s\right)\mathcal{P}\hat{\rho}\left(s\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $\mathcal{K}\left(s\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\rho}\left(s\right)$
+\end_inset
+
+ are the Laplace transforms of 
+\begin_inset Formula $\mathcal{K}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\rho}\left(t\right)$
+\end_inset
+
+, respectively
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Solve for 
+\begin_inset Formula $\hat{\rho}\left(s\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+s+\mathcal{K}\left(s\right)\mathcal{P}\hat{\rho}\left(s\right)=\mathcal{P}\hat{\rho}\left(0\right)
+\]
+
+\end_inset
+
+ so that
+\begin_inset Formula 
+\[
+\mathcal{P}\hat{\rho}\left(s\right)=\frac{\mathcal{P}\hat{\rho}\left(0\right)}{s+\mathcal{K}\left(s\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Take the inversere Laplace transform:
+\begin_inset Formula 
+\begin{equation}
+\mathcal{P}\hat{\rho}\left(t\right)=\mathcal{V}\left(t\right)\mathcal{P}\hat{\rho}\left(0\right)\quad\text{with}\quad\mathcal{V}\left(t\right)=\frac{1}{2\pi i}\int_{\kappa-i\infty}^{\kappa+i\infty}\frac{e^{st}}{s+\mathcal{K}\left(s\right)}ds\label{eq:InverseLaplacian}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ is an arbitrary positive constant so taht the contour of integration lies
+ to teh right of all signularities in the integrand
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Take the time derivative of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:InverseLaplacian"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}\left(\mathcal{P}\hat{\rho}\left(t\right)\right)=\mathcal{F}\left(t\right)\hat{\rho}\left(t\right),
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\mathcal{F}\left(t\right)=\frac{\partial\mathcal{V}\left(t\right)}{\partial t}\mathcal{V}^{-1}\left(t\right)
+\]
+
+\end_inset
+
+which may be written as
+\begin_inset Formula 
+\[
+\mathcal{K}^{\text{CL}}\left(\tau\right)=-\frac{\partial\mathcal{F}\left(\tau\right)}{\partial\tau}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+It is impossible to calculate 
+\begin_inset Formula $\mathcal{K}^{\text{NZ}}\left(\tau\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{K}^{\text{CL}}\left(\tau\right)$
+\end_inset
+
+ for most realistic systems
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use a perturbation expansion for these superoperators
+\begin_inset Formula 
+\[
+\mathcal{K}_{2}^{\text{NZ}}\left(\tau\right)=\mathcal{K}_{2}^{\text{CL}}\left(\tau\right)=\mathcal{P}\mathcal{L}_{V}e^{-i\mathcal{L}_{0}\tau}\mathcal{L}_{V}\mathcal{P}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Terms:
+\begin_inset Formula 
+\[
+\mathcal{L}_{0}\hat{\rho}=\tilde{H}_{0}\hat{\rho}-\hat{\rho}\tilde{H}_{0},\quad\text{and}\quad\mathcal{L}_{V}\hat{\rho}=\tilde{V}\hat{\rho}-\hat{\rho}\tilde{V}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{L}_{0}$
+\end_inset
+
+ - Liouville superoperstor corresponkding to 
+\begin_inset Formula $\tilde{H}_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{L}_{V}$
+\end_inset
+
+ - Liouville superoperstor corresponkding to 
+\begin_inset Formula $\tilde{V}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The convolutionless approach is time-local and a better approximation to
+ the exact solution than the Nakajima-Zwanzig equation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Use the projection operator that acts on the total density matrix as follows:
+\begin_inset Formula 
+\begin{equation}
+\mathcal{P}\hat{\rho}=\sum_{n}\ket{n}\bra{n}\hat{\rho}_{\text{eq}}^{\text{os}}\text{Tr}\,\left(\ket{n}\bra{n}\hat{\rho}\right),\label{eq:ProjectionOperator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The trace is taken over both electronic and oscillator degrees of freedom
+\end_layout
+
+\begin_layout Itemize
+The density matrix
+\begin_inset Formula 
+\[
+\hat{\rho}_{\text{eq}}^{\text{os}}=\frac{e^{-\beta\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}}}{\text{Tr}\,\left(e^{-\beta\sum_{i}\omega_{i}\hat{a}_{i}^{\dagger}\hat{a}_{i}}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The probability for finding the electronic system in state 
+\begin_inset Formula $\ket{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $P_{n}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+P_{n}=\text{Tr}\,\left(\ket{n}\bra{n}\hat{\rho}\right)
+\]
+
+\end_inset
+
+so that the projection operator of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ProjectionOperator"
+
+\end_inset
+
+) 
+\begin_inset Formula 
+\[
+\mathcal{P}\hat{\rho}=\sum_{n}P_{n}\ket{n}\bra{n}\hat{\rho}_{\text{eq}}^{\text{os}},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Time-convolutionless equation:
+\begin_inset Formula 
+\begin{align*}
+\sum_{n} & \frac{dP_{n}\left(t\right)}{dt}\ket{n}\bra{n}\hat{\rho}_{\text{eq}}^{\text{os}}=\\
+ & -\sum_{nmij}\prime\ket{n}\bra{n}P_{n}\left(t\right)\times\int_{0}^{t}d\tau\,\text{Tr}\,\left(e^{i\left(\tilde{\epsilon}_{n}-\tilde{\epsilon}_{m}\right)\tau}\hat{M}_{nmi}\hat{M}_{mnj}\left(-\tau\right)\hat{\rho}_{\text{eq}}^{\text{os}}+e^{-i\left(\tilde{\epsilon}_{n}-\tilde{\epsilon}_{m}\right)\tau}\hat{M}_{nmi}\hat{M}_{mnj}\left(\tau\right)\hat{\rho}_{\text{eq}}^{\text{os}}\right)\\
+ & +\sum_{nmij}\prime\ket{m}\bra{m}P_{n}\left(t\right)\times\int_{0}^{t}d\tau\,\text{Tr}\,\left(e^{i\left(\tilde{\epsilon}_{n}-\tilde{\epsilon}_{m}\right)\tau}\hat{M}_{nmi}\hat{M}_{mnj}\left(-\tau\right)\hat{\rho}_{\text{eq}}^{\text{os}}+e^{-i\left(\tilde{\epsilon}_{n}-\tilde{\epsilon}_{m}\right)\tau}\hat{M}_{nmi}\hat{M}_{mnj}\left(\tau\right)\hat{\rho}_{\text{eq}}^{\text{os}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here,
+\begin_inset Formula 
+\[
+\hat{M}_{mnj}\left(\tau\right)=e^{i\tilde{H}_{0}\tau}\hat{M}_{nmi}e^{-i\tilde{H}_{0}\tau}
+\]
+
+\end_inset
+
+and the primes (
+\begin_inset Formula $\prime$
+\end_inset
+
+) in the summations indicate that 
+\begin_inset Formula $m\neq n$
+\end_inset
+
+ is excluded
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Multiply both sides of this expression by 
+\begin_inset Formula $\ket{n}\bra{n}$
+\end_inset
+
+ and take the trace:
+\begin_inset Formula 
+\[
+\frac{dP_{n}}{dt}=\sum_{m}W_{nm}\left(t\right)P_{m}-\sum_{m}W_{nm}\left(t\right)P_{n}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\begin_inset Formula $W_{nm}\left(t\right)$
+\end_inset
+
+ are time-dependent rates
+\begin_inset Formula 
+\begin{equation}
+W_{mn}\left(t\right)=2\mathfrak{Re}\int_{0}^{t}d\tau\sum_{ij}\braket{M_{nmi}M_{mnj}\left(\tau\right)}e^{i\left(\tilde{\epsilon}_{n}-\tilde{\epsilon}_{m}\right)\tau}\label{eq:TimeDependentRate}
+\end{equation}
+
+\end_inset
+
+ and the correlation functions 
+\begin_inset Formula $\braket{M_{nmi}M_{mnj}\left(\tau\right)}$
+\end_inset
+
+ are
+\begin_inset Formula 
+\begin{equation}
+\braket{M_{nmi}M_{mnj}\left(\tau\right)}=\text{Tr}\,\left(M_{nmi}M_{mnj}\left(\tau\right)\hat{\rho}_{\text{eq}}^{\text{os}}\right)\label{eq:CorrelationFunctions}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The explicit form of 
+\begin_inset Formula $M_{nmi}$
+\end_inset
+
+ can be used to reduce the correlation functions to the averaging of displacemen
+t operators over the equilibrium ensemble
+\begin_inset Formula 
+\begin{align}
+\braket{M_{nmi}M_{mnj}\left(\tau\right)} & =g_{nmi}g_{mnj}\left(\Delta_{nmi}\left(\bar{n}_{i}+1\right)e^{i\omega_{i}\tau}-\Delta_{nmi}\bar{n}_{i}e^{-i\omega_{i}\tau}+\Omega_{nmi}\right)\times\nonumber \\
+ & \quad\left(\Delta_{nmj}\left(\bar{n}_{j}+1\right)e^{i\omega_{i}\tau}-\Delta_{nmj}\bar{n}_{j}e^{-i\omega_{i}\tau}+\Omega_{nmj}\right)+\nonumber \\
+ & \quad\left(\delta_{ij}\left(\bar{n}_{i}+1\right)e^{i\omega_{i}\tau}+\delta_{ij}\bar{n}_{i}e^{-i\omega_{i}\tau}\right)q_{nm}\left(\tau\right)f_{nm}\left(\tau\right)\label{eq:CorrelationFunctionsReduced}
+\end{align}
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\Delta_{nmi}=\frac{\left(g_{nni}-g_{mmi}\right)}{\omega_{i}},\quad\Omega_{nmi}=\frac{g_{nni}+g_{mmi}}{\omega_{i}},\quad\bar{n}_{i}=\frac{1}{e^{\beta\omega_{i}-1}},\quad\text{and}\quad q_{nm}\left(\tau\right)=e^{i\sum_{j}\Delta_{nmj}^{2}\sin\omega_{j}\tau}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+f_{nm}\left(\tau\right)=e^{-2\sum_{j}\left(\bar{n}_{n}+\frac{1}{2}\right)\Delta_{nmj}^{2}\left(1-\cos\omega_{j}\tau\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $g_{nni}=0$
+\end_inset
+
+, the correlation functions of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CorrelationFunctionsReduced"
+
+\end_inset
+
+) reduce to those obtained by Fermi's golden rule.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $g_{nni}/\omega_{i}\gg1$
+\end_inset
+
+, the golden rule approach is not applicable
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The qualitative behavior of 
+\begin_inset Formula $P_{n}\left(t\right)$
+\end_inset
+
+ depends on the explicit form of the time-dependent rates 
+\begin_inset Formula $W_{mn}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Simplifications
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For large systems, expect (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TimeDependentRate"
+
+\end_inset
+
+) to decay to zero so that 
+\begin_inset Formula $W_{mn}\left(t\right)$
+\end_inset
+
+ are constant in the long time limit
+\end_layout
+
+\begin_layout Itemize
+Expressions for 
+\begin_inset Formula $W_{mn}\left(t\right)$
+\end_inset
+
+ may be replaced by their time-independent Markovian limits in the long-time
+ limit [i.e., if electronic relaxation times are much longer than the decay
+ rate of the integrand in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TimeDependentRate"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Itemize
+When a model satisfies the condition
+\begin_inset Formula 
+\[
+\sum_{j}\left(\bar{n}_{j}+\frac{1}{2}\right)\Delta_{nmj}^{2}\gg0
+\]
+
+\end_inset
+
+ and with 
+\begin_inset Formula $\Delta_{nmi}$
+\end_inset
+
+ taken as a smooth function of 
+\begin_inset Formula $i$
+\end_inset
+
+, we can approximate 
+\begin_inset Formula $f_{nm}\left(\tau\right)$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+f_{nm}\left(\tau\right)\sim e^{a_{nm}\tau^{2}}
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+a_{nm}=\sum_{j}\left(\bar{n}_{j}+\frac{1}{2}\right)\Delta_{nmj}^{2}\omega_{j}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $\omega_{i}\tau\ll1$
+\end_inset
+
+, we use a small angle approximation in 
+\begin_inset Formula $q_{mn}\left(t\right)$
+\end_inset
+
+ so that 
+\begin_inset Formula $\sin\omega_{i}\tau\sim\omega_{i}\tau$
+\end_inset
+
+ and
+\begin_inset Formula 
+\[
+q_{nm}\left(t\right)\simeq e^{i\gamma_{nm}t}
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\gamma=\sum_{i}\Delta_{nm}^{2}\omega_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Under these approximations, the long-time (Markovian) limit of 
+\begin_inset Formula $W_{nm}\left(t\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\lim_{t\rightarrow\infty}W_{nm}\left(t\right)=\sum_{ij}L_{nmij},
+\]
+
+\end_inset
+
+ where with
+\begin_inset Formula 
+\[
+G_{nm}\left(x\right)=\sqrt{\frac{\pi}{a_{nm}}}\exp\left(-\frac{x^{2}}{4a_{nm}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Application to the Odorant-Receptor Complex
+\end_layout
+
+\begin_layout Itemize
+Let us define our system to be
+\begin_inset Formula 
+\[
+t\left(\ket{D}\bra{A}+\ket{A}\bra{D}\right)+\left(\mathcal{E}_{D}\hat{P}_{D}+\mathcal{E}_{A}\hat{P}_{A}\right)+\hbar\omega_{P}\left(\hat{a}_{P}^{\dagger}\hat{a}_{P}+\frac{1}{2}\right)+\sum
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dissipation-enabled vibrational sensing in an olfactory molecular switch
+\end_layout
+
+\begin_layout Itemize
+Source - I'm following the disccusion of A.
+ Checinska, F.A.
+ Pollock, L.
+ Heanley, and A.
+ Nazir from 
+\emph on
+J.
+ Chem.
+ Phys.
+
+\emph default
+ 
+\series bold
+142
+\series default
+, 025102 (2015).
+\end_layout
+
+\begin_layout Itemize
+Method
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trace out the environment
+\end_layout
+
+\begin_layout Itemize
+Treat the the perturbative term 
+\begin_inset Formula $\hat{H}_{\text{IP}}$
+\end_inset
+
+ up to second order only in the Born-Markov approximation
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Spin-boson Hamiltonian
+\end_layout
+
+\begin_layout Itemize
+Start with the spin-boson Hamiltonian
+\begin_inset Formula 
+\begin{align}
+\hat{H} & =\epsilon_{D}\ket{D}\bra{D}+\epsilon_{A}\ket{A}\bra{A}+V\left(\ket{A}\bra{D}+\ket{D}\bra{A}\right)\nonumber \\
+ & +\omega_{0}\hat{a}^{\dagger}\hat{a}+\left(\gamma_{D}\ket{D}\bra{D}+\gamma_{A}\ket{A}\bra{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)\nonumber \\
+ & \quad+\sum_{k}\left[\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\left(\gamma_{kD}\ket{D}\bra{D}+\gamma_{kA}\ket{A}\bra{A}\right)\left(\hat{b}_{k}^{\dagger}+\hat{b}_{k}\right)\right]\label{eq:HamiltonianSB}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This could also be written as
+\begin_inset Formula 
+\begin{align}
+\hat{H} & =\epsilon_{D}\hat{P}_{D}+\epsilon_{A}\hat{P}_{A}+V\left(\hat{P}_{AD}+\hat{P}_{DA}\right)+\omega_{0}\hat{a}^{\dagger}\hat{a}+\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)\nonumber \\
+ & \quad+\sum_{k}\left[\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\left(\gamma_{kD}\hat{P}_{D}+\gamma_{kA}\hat{P}_{A}\right)\left(\hat{b}_{k}^{\dagger}+\hat{b}_{k}\right)\right]\label{eq:HamiltonianOriginalv02}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Spectral density for the bath:
+\begin_inset Formula 
+\[
+J\left(\omega\right)=\sum_{k}\left(\gamma_{kD}-\gamma_{kA}\right)^{2}\delta\left(\omega-\omega_{k}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume an Ohmic environment:
+\begin_inset Formula 
+\[
+J\left(\omega\right)\propto\omega\quad\text{as}\quad\omega\rightarrow0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $\omega_{c}$
+\end_inset
+
+ is a cutoff frequency, above which 
+\begin_inset Formula $J\left(\omega\right)\rightarrow0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In terms of the reorganization energy, the spectral density may be written:
+\begin_inset Formula 
+\[
+J\left(\omega\right)=\lambda\frac{\omega}{\omega_{c}}e^{-\omega/\omega_{c}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Polaron Transformation
+\end_layout
+
+\begin_layout Itemize
+Objective: remove the linear coupling terms from (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HamiltonianSB"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume that 
+\begin_inset Formula $V$
+\end_inset
+
+ is small
+\end_layout
+
+\begin_layout Itemize
+Transform to the a polaron reference frame
+\begin_inset Formula 
+\[
+U=e^{-\left(S_{\mathcal{A}}+S_{B}\right)}
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+S_{\mathcal{A}}\equiv\left(u_{D}\ket{D}\bra{D}+u_{A}\ket{A}\bra{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+S_{B}=\sum_{k}\left(\alpha_{kD}\ket{D}\bra{D}+u_{kA}\ket{A}\bra{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here
+\begin_inset Formula 
+\[
+u_{X}=\frac{\gamma_{X}}{\omega_{0}}\quad\text{and}\quad\alpha_{kX}=\frac{\gamma_{kX}}{\omega_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In a more compact notation, I would write this as follows:
+\begin_inset Formula 
+\begin{align*}
+S_{\mathcal{A}} & =\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)=u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)+u_{A}\hat{P}_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+S_{\mathcal{B}} & =\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Here, I'm using the transition operator notation:
+\begin_inset Formula 
+\[
+\hat{P}_{jk}\equiv\ket{j}\bra{k},\quad\hat{P}_{m}\equiv\hat{P}_{mm}=\ket{m}\bra{m},
+\]
+
+\end_inset
+
+where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{P}_{jk}$
+\end_inset
+
+ is a transition operator from 
+\begin_inset Formula $\ket{k}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ket{j}$
+\end_inset
+
+, and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{P}_{m}$
+\end_inset
+
+ is a projection operator, which is a special case of a transition operator,
+ for which 
+\begin_inset Formula $\ket{k}=\ket{j}=\ket{m}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Thus, we can write
+\begin_inset Formula 
+\[
+\hat{U}=\exp\left(-S_{A}\right)\exp\left(-S_{B}\right)=\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The right-most equality holds because addition commutes
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Also,
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}=\exp\left(-S_{B}^{\dagger}\right)\exp\left(-S_{A}^{\dagger}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's consider 
+\begin_inset Formula $S_{\mathcal{A}}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{\mathcal{B}}^{\dagger}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+S_{\mathcal{A}}^{\dagger}=\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(-\hat{a}^{\dagger}+\hat{a}\right)=-S_{\mathcal{A}}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+S_{\mathcal{B}}^{\dagger}=\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(-b_{k}^{\dagger}+b_{k}\right)=-S_{\mathcal{B}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now we can write
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}=\exp\left(S_{B}\right)\exp\left(-S_{A}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In series-expansion form, we have
+\begin_inset Formula 
+\begin{equation}
+e^{-S_{\mathcal{A}}}=\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}=\sum_{k=0}^{\infty}\frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\label{eq:expSA}
+\end{equation}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{equation}
+e^{-S_{B}}=\sum_{j=0}^{\infty}\frac{1}{j!}\left[-\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\label{eq:expSB}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The transformation of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+\hat{H}_{\text{P}}=\hat{U}^{\dagger}\hat{H}\hat{U}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Polaron Transformation of the Electronic Component
+\end_layout
+
+\begin_layout Itemize
+Let us consider only the first four transformed terms of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HamiltonianOriginalv02"
+
+\end_inset
+
+), corresponding to the electronic-only part of the Hamiltonian:
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger}\left(\epsilon_{D}\hat{P}_{D}+\epsilon_{A}\hat{P}_{A}+V\left(\hat{P}_{AD}+\hat{P}_{DA}\right)\right)\hat{U} & =\exp\left(S_{B}\right)\exp\left(S_{A}\right)\epsilon_{D}\hat{P}_{D}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)\\
+ & \quad+\exp\left(S_{B}\right)\exp\left(S_{A}\right)\epsilon_{A}\hat{P}_{A}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)\\
+ & \quad+V\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{DA}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)\\
+ & \quad+V\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{AD}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To manipulate this, let us consider the action of 
+\begin_inset Formula $\hat{P}_{D}$
+\end_inset
+
+ on 
+\begin_inset Formula $\exp\left(-S_{B}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\ket{D}\bra{D}\exp\left(-S_{B}\right)=\hat{P}_{D}\left(\sum_{j=0}^{\infty}\frac{1}{j!}\left[-\sum_{k=0}^{\infty}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+To manipulate this, consider
+\begin_inset Formula 
+\begin{align*}
+\hat{P}_{D} & \left(\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right)\\
+= & \left(\alpha_{kD}\hat{P}_{D}\hat{P}_{D}+\alpha_{kA}\cancelto{0}{\hat{P}_{D}\hat{P}_{A}}\right)\left(b_{k}^{\dagger}-b_{k}\right)\\
+= & \alpha_{kD}\hat{P}_{D}\left(b_{k}^{\dagger}-b_{k}\right)\hat{P}_{D}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Thus:
+\begin_inset Formula 
+\begin{align*}
+\ket{D}\bra{D}\exp\left(-S_{B}\right) & =\hat{P}_{D}\left(\sum_{j=1}^{\infty}\frac{1}{j!}\left[-\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\right)\\
+ & =\hat{P}_{D}\left(\sum_{j=1}^{\infty}\frac{1}{j!}\left[-\sum_{k}\alpha_{kD}\hat{P}_{D}\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We notice that 
+\begin_inset Formula $\hat{P}_{D}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\sum_{j=1}^{\infty}\frac{1}{j!}\left[\sum_{k}\alpha_{kD}\hat{P}_{D}\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\right)$
+\end_inset
+
+ commute
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now, consider
+\begin_inset Formula 
+\begin{align}
+\hat{P}_{D} & \exp\left(-S_{B}\right)\exp\left(-S_{A}\right)\nonumber \\
+ & =\hat{P}_{D}\left(\sum_{j=1}^{\infty}\frac{1}{j!}\left[-\sum_{k}\alpha_{kD}\hat{P}_{D}\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\right)\left(\sum_{l=1}^{\infty}\frac{1}{l!}\left[-\left(u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)+u_{A}\hat{P}_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\right]^{l}\right)\nonumber \\
+ & =\left(\sum_{j=1}^{\infty}\frac{1}{j!}\left[-\sum_{k}\alpha_{kD}\hat{P}_{D}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]^{j}\right)\hat{P}_{D}\left(\sum_{l=1}^{\infty}\frac{1}{l!}\left[-\left(u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)+u_{A}\hat{P}_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\right]^{l}\right)\nonumber \\
+ & =\hat{P}_{D}\left(\sum_{j=1}^{\infty}\frac{1}{j!}\left[-\sum_{k}\alpha_{kD}\hat{P}_{D}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]^{j}\right)\left(\sum_{l=1}^{\infty}\frac{1}{l!}\left[-u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{l}\right)\label{eq:PDU}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now, let 
+\begin_inset Formula $\epsilon_{D}\exp\left(S_{B}\right)\exp\left(S_{A}\right)$
+\end_inset
+
+ act on 
+\begin_inset Formula $\hat{P}_{D}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\epsilon_{D} & \exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{D}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)\\
+ & =-\epsilon_{D}\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{D}\left(\sum_{j=1}^{\infty}\frac{1}{j!}\left[-\sum_{k}\alpha_{kD}\hat{P}_{D}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]^{j}\right)\left(\sum_{l=1}^{\infty}\frac{1}{l!}\left[-u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{l}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For now, focus on 
+\begin_inset Formula $\exp\left(S_{A}\right)\hat{P}_{D}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\exp\left(S_{A}\right)\hat{P}_{D} & =\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[\left(u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)+u_{A}\hat{P}_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\right]^{k}\right)\hat{P}_{D}\\
+ & =\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)\hat{P}_{D}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Next, consider 
+\begin_inset Formula $\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{D}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align}
+\exp\left(S_{B}\right) & \exp\left(S_{A}\right)\hat{P}_{D}\nonumber \\
+ & =\left(\sum_{j=0}^{\infty}\frac{1}{j!}\left[\sum_{m}\left(\alpha_{mD}\hat{P}_{D}+\alpha_{mA}\hat{P}_{A}\right)\left(\hat{b}_{m}^{\dagger}-\hat{b}_{m}\right)\right]^{j}\right)\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)\hat{P}_{D}\nonumber \\
+ & =\left(\sum_{j=0}^{\infty}\frac{1}{j!}\left[\sum_{m}\left(\alpha_{mD}\hat{P}_{D}+\alpha_{mA}\hat{P}_{A}\right)\left(\hat{b}_{m}^{\dagger}-\hat{b}_{m}\right)\right]^{j}\right)\hat{P}_{D}\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)\\
+ & =\left(\sum_{j=0}^{\infty}\frac{1}{j!}\left[\sum_{m}\left(\alpha_{mD}\hat{P}_{D}\right)\left(\hat{b}_{m}^{\dagger}-\hat{b}_{m}\right)\right]^{j}\right)\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)\hat{P}_{D}\label{eq:UPD}\\
+ & =\exp\left(\sum_{m}\left(\alpha_{mD}\hat{P}_{D}\right)\left(\hat{b}_{m}^{\dagger}-\hat{b}_{m}\right)\right)\exp\left(u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\hat{P}_{D}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now, combine (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PDU"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:UPD"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align*}
+\exp\left(S_{B}^{\dagger}\right) & \exp\left(S_{A}^{\dagger}\right)\hat{P}_{D}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)\\
+ & =\exp\left(\sum_{m}\left(\alpha_{mD}\hat{P}_{D}\right)\left(\hat{b}_{m}^{\dagger}-\hat{b}_{m}\right)\right)\exp\left(u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\hat{P}_{D}\times\\
+ & \qquad\exp\left(-\sum_{m}\left(\alpha_{mD}\hat{P}_{D}\right)\left(\hat{b}_{m}^{\dagger}-\hat{b}_{m}\right)\right)\exp\left(-u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\\
+ & =\hat{P}_{D}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+By similar logic, we expect 
+\begin_inset Formula 
+\[
+\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{A}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)=\hat{P}_{A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next, consider 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{P}_{DA}\hat{U}=\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{DA}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)$
+\end_inset
+
+ , starting with the product
+\begin_inset Formula 
+\begin{align*}
+\hat{P}_{DA}\exp\left(-S_{B}\right) & =\hat{P}_{DA}\sum_{j=0}^{\infty}\frac{1}{j!}\left[\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]^{j}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\[
+\hat{P}_{DA}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)=\left(\alpha_{kD}\hat{P}_{DA}\hat{P}_{D}+\alpha_{kA}\hat{P}_{DA}\hat{P}_{A}\right)\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\hat{P}_{DA}\hat{P}_{D}=\ket{D}\braket{A|D}\ket{D}=0\quad\text{and}\quad\hat{P}_{DA}\hat{P}_{A}=\ket{D}\braket{A|A}\ket{A}=\hat{P}_{DA}\hat{1}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+\hat{P}_{DA}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)=\alpha_{kA}\hat{P}_{DA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Finally, we have
+\begin_inset Formula 
+\begin{align*}
+\hat{P}_{DA}\exp\left(-S_{B}\right) & =\hat{P}_{DA}\sum_{j=0}^{\infty}\frac{1}{j!}\left[-\sum_{k}\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]^{j}\\
+ & =\hat{P}_{DA}\exp\left(-\sum_{k}\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right)\\
+ & =\exp\left(-\sum_{k}\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right)\hat{P}_{DA}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next, we have
+\begin_inset Formula 
+\begin{align}
+\hat{P}_{DA} & \exp\left(-S_{B}\right)\exp\left(-S_{A}\right)\nonumber \\
+ & =\exp\left(\sum_{k}\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right)\hat{P}_{DA}\left(-\sum_{l=1}^{\infty}\frac{1}{l!}\left[u_{D}\hat{P}_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)+u_{A}\hat{P}_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{l}\right)\nonumber \\
+ & =\exp\left(\sum_{k}\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right)\hat{P}_{DA}\left(-\sum_{l=1}^{\infty}\frac{1}{l!}\left[u_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{l}\right)\nonumber \\
+ & =\hat{P}_{DA}\exp\left(-\sum_{k}\alpha_{k}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right)\exp\left(-u_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\label{eq:PDA_U}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now, consider 
+\begin_inset Formula $\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{DA}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\exp & \left[\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right]\exp\left[\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\hat{P}_{DA}\nonumber \\
+ & =\sum_{j=0}^{\infty}\frac{1}{j!}\left[\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\nonumber \\
+ & \quad\times\sum_{l=0}^{\infty}\frac{1}{l!}\left[\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{l}\hat{P}_{DA}\nonumber \\
+ & =\sum_{j=0}^{\infty}\frac{1}{j!}\left[\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\sum_{l=0}^{\infty}\frac{1}{l!}\left[u_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{l}\hat{P}_{DA}\nonumber \\
+ & =\sum_{j=0}^{\infty}\frac{1}{j!}\left[\sum_{k}\alpha_{kD}\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\sum_{l=0}^{\infty}\frac{1}{l!}\left[u_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{l}\hat{P}_{DA}\nonumber \\
+ & =\exp\left[\sum_{k}\alpha_{kD}\left(b_{k}^{\dagger}-b_{k}\right)\right]\exp\left[u_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\hat{P}_{DA}\label{eq:Ud_PDA}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now, combining (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PDA_U"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Ud_PDA"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align*}
+\exp & \left[\sum_{k}\alpha_{kD}\left(b_{k}^{\dagger}-b_{k}\right)\right]\exp\left[u_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\hat{P}_{DA}\exp\left[-\sum_{k}\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]\exp\left(-u_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)\\
+ & \neq\hat{P}_{DA}
+\end{align*}
+
+\end_inset
+
+
+\color blue
+Nishat: earlier, I told you this reduced to 
+\begin_inset Formula $\hat{P}_{DA}$
+\end_inset
+
+, but I no longer think it does, because 
+\begin_inset Formula $u_{A}\neq u_{D}$
+\end_inset
+
+, and 
+\begin_inset Formula $\alpha_{kD}\neq\alpha_{kA}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\hat{P}_{DA}$
+\end_inset
+
+ commutes with each of the exponential operators, we can combine exponentials:
+\begin_inset Formula 
+\begin{align}
+\exp\left[u_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\exp\left(-u_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right) & =\exp\left[\left(u_{D}-u_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\nonumber \\
+ & =\exp\left[\left(u_{D}-u_{A}\right)\hat{a}^{\dagger}-\left(u_{D}-u_{A}\right)^{\ast}\hat{a}\right]\label{eq:DispOpForm}
+\end{align}
+
+\end_inset
+
+where the (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DispOpForm"
+
+\end_inset
+
+) is obtained by assuming that 
+\begin_inset Formula $u_{D},u_{A},u_{D}-u_{A}\in\mathbb{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Similarly,
+\begin_inset Formula 
+\begin{align}
+\exp & \left[\sum_{k}\alpha_{kD}\left(b_{k}^{\dagger}-b_{k}\right)\right]\exp\left[-\sum_{k}\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]\nonumber \\
+ & =\exp\left[\sum_{k}\alpha_{kD}\left(b_{k}^{\dagger}-b_{k}\right)-\alpha_{kA}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]\nonumber \\
+ & =\exp\left[\sum_{k}\left(\alpha_{kD}-\alpha_{kA}\right)\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]\nonumber \\
+ & =\exp\left[\sum_{k}\left(\alpha_{kD}-\alpha_{kA}\right)\hat{b}_{k}^{\dagger}-\left(\alpha_{kD}-\alpha_{kA}\right)^{\ast}\hat{b}_{k}\right]\label{eq:DispOpFormB}
+\end{align}
+
+\end_inset
+
+ where (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DispOpFormB"
+
+\end_inset
+
+) is achieved under an assumption equivalent to the one leading to (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DispOpForm"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Next, we note that (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DispOpForm"
+
+\end_inset
+
+) is of the form of a displacement operator 
+\begin_inset Formula $\hat{\mathcal{D}}\left(u\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{\mathcal{D}}\left(u\right)=e^{u\hat{a}^{\dagger}-u^{\ast}\hat{a}}
+\]
+
+\end_inset
+
+ so that (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DispOpForm"
+
+\end_inset
+
+) may be written as
+\begin_inset Formula 
+\[
+\exp\left[\left(u_{D}-u_{A}\right)\hat{a}^{\dagger}-\left(u_{D}-u_{A}\right)^{\ast}\hat{a}\right]=\hat{\mathcal{D}}\left(u_{D}-u_{A}\right)
+\]
+
+\end_inset
+
+and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DispOpFormB"
+
+\end_inset
+
+) may be written as
+\begin_inset Formula 
+\begin{align*}
+\exp & \left[\sum_{k}\left(\alpha_{kD}-\alpha_{kA}\right)\hat{b}_{k}^{\dagger}-\left(\alpha_{kD}-\alpha_{kA}\right)^{\ast}\hat{b}_{k}\right]\\
+ & =\prod_{k}\exp\left[\left(\alpha_{kD}-\alpha_{kA}\right)\hat{b}_{k}^{\dagger}-\left(\alpha_{kD}-\alpha_{kA}\right)^{\ast}\hat{b}_{k}\right]\\
+ & =\prod_{k}\hat{\mathcal{D}}_{k}\left(\alpha_{kD}-\alpha_{kA}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Finally, we write 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{P}_{DA}\hat{U}$
+\end_inset
+
+ as
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger}\hat{P}_{DA}\hat{U} & =\hat{P}_{DA}\left(\prod_{k}\hat{\mathcal{D}}_{k}\left(\alpha_{kD}-\alpha_{kA}\right)\right)\hat{\mathcal{D}}\left(u_{D}-u_{A}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, the three operators 
+\begin_inset Formula $\hat{P}_{DA}$
+\end_inset
+
+, 
+\begin_inset Formula $\prod_{k}\hat{\mathcal{D}}_{k}\left(\alpha_{kD}-\alpha_{kA}\right)$
+\end_inset
+
+, and 
+\begin_inset Formula $\hat{\mathcal{D}}\left(u_{D}-u_{A}\right)$
+\end_inset
+
+ commute with one another because each acts on its own unique Hilbert space
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Similarly, we should expect the term 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{P}_{AD}\hat{U}=\exp\left(S_{B}\right)\exp\left(S_{A}\right)\hat{P}_{AD}\exp\left(-S_{B}\right)\exp\left(-S_{A}\right)$
+\end_inset
+
+ to resolve to
+\begin_inset Formula 
+\[
+\exp\left[\sum_{k}\alpha_{kA}\left(b_{k}^{\dagger}-b_{k}\right)\right]\exp\left[u_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\hat{P}_{AD}\exp\left(-\sum_{k}\alpha_{kD}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right)\exp\left(-u_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The exponentials combine to form
+\begin_inset Formula 
+\[
+\exp\left[u_{A}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\exp\left[-u_{D}\left(\hat{a}^{\dagger}-\hat{a}\right)\right]=\hat{D}\left(-\left(u_{D}-u_{A}\right)\right)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\exp & \left[\sum_{k}\alpha_{kA}\left(b_{k}^{\dagger}-b_{k}\right)\right]\exp\left[-\sum_{k}\alpha_{kD}\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)\right]\\
+ & =\prod_{k}\hat{\mathcal{D}}_{k}\left(-\left(\alpha_{kD}-\alpha_{kA}\right)\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We write 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{P}_{AD}\hat{U}$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\hat{P}_{AD}\hat{U}=\hat{P}_{AD}\left(\prod_{k}\hat{\mathcal{D}}_{k}\left(-\left(\alpha_{kD}-\alpha_{kA}\right)\right)\right)\hat{\mathcal{D}}\left(-\left(u_{D}-u_{A}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let us define
+\begin_inset Formula 
+\[
+\mathcal{A}_{\pm}\equiv\hat{\mathcal{D}}\left(\pm\left(u_{D}-u_{A}\right)\right)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\mathcal{B}_{\pm}\equiv\prod_{k}\hat{\mathcal{D}}_{k}\left(\pm\left(u_{D}-u_{A}\right)\right)
+\]
+
+\end_inset
+
+so that we write
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\hat{P}_{DA}\hat{U}=\hat{P}_{DA}\mathcal{A}_{+}\mathcal{B}_{+}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\hat{P}_{AD}\hat{U}=\hat{P}_{AD}\mathcal{A}_{-}\mathcal{B}_{-}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus, we have for the transformed electronic part of the Hamiltonian:
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger} & \left[\epsilon_{D}\hat{P}_{D}+\epsilon_{A}\hat{P}_{A}+V\left(\hat{P}_{AD}+\hat{P}_{DA}\right)\right]\hat{U}\nonumber \\
+ & =\epsilon_{D}\hat{P}_{D}+\epsilon_{A}\hat{P}_{A}+V\left(\hat{P}_{DA}\mathcal{A}_{+}\mathcal{B}_{+}+\hat{P}_{AD}\mathcal{A}_{-}\mathcal{B}_{-}\right)\label{eq:PolaronTransformedElectron}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Polaron Transformation of the Vibrational Component
+\end_layout
+
+\begin_layout Itemize
+Now we will transform the terms 
+\begin_inset Formula $\omega_{0}\hat{a}^{\dagger}\hat{a}+\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)$
+\end_inset
+
+ from (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HamiltonianSB"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The first term, 
+\begin_inset Formula $\omega_{0}\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+, is the free Hamiltonian of the odorant only
+\end_layout
+
+\begin_layout Itemize
+the second term, 
+\begin_inset Formula $\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)$
+\end_inset
+
+, is the odorant-electron interaction, which is linear in position (
+\begin_inset Formula $\hat{Q}\propto\left(\hat{a}^{\dagger}+\hat{a}\right)$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Start with 
+\begin_inset Formula $\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U}=\omega_{0}e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{B}}}e^{-S_{\mathcal{A}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Start by considering 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{B}}}e^{-S_{\mathcal{A}}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{B}}}e^{-S_{\mathcal{A}}} & =\hat{a}^{\dagger}\hat{a}\left(\sum_{j=0}^{\infty}\frac{1}{j!}\left[-\sum_{k}\left(\alpha_{kD}\hat{P}_{D}+\alpha_{kA}\hat{P}_{A}\right)\left(b_{k}^{\dagger}-b_{k}\right)\right]^{j}\right)\\
+ & \quad\times\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)
+\end{align*}
+
+\end_inset
+
+First note that 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $e^{-S_{\mathcal{B}}}$
+\end_inset
+
+, and recall that 
+\begin_inset Formula $e^{\pm S_{\mathcal{B}}}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $e^{\pm S_{A}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Therefore, we can reduce 
+\begin_inset Formula $\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U}$
+\end_inset
+
+ as follows:
+\begin_inset Formula 
+\begin{equation}
+\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U}=\omega_{0}\cancelto{\hat{1}}{e^{S_{\mathcal{B}}}e^{-S_{\mathcal{B}}}}e^{S_{\mathcal{A}}}\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{A}}}=\omega_{0}e^{S_{\mathcal{A}}}\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{A}}}\label{eq:reducedOdorantPolaronTransform}
+\end{equation}
+
+\end_inset
+
+ so we need only concern ourselves with 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{A}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now, focus on 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{A}}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{A}}} & =\hat{a}^{\dagger}\hat{a}\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}$
+\end_inset
+
+, we investigate how 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}$
+\end_inset
+
+ commute
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Start with 
+\begin_inset Formula $\hat{a}^{\dagger}\hat{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\hat{a}^{\dagger}-\hat{a}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{a}^{\dagger}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)=\hat{a}^{\dagger}\hat{a}\hat{a}^{\dagger}-\hat{a}^{\dagger}\hat{a}\hat{a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+or try the identity
+\begin_inset Formula 
+\begin{equation}
+\left[\hat{a},\hat{a}^{\dagger}\right]=\hat{a}\hat{a}^{\dagger}-\hat{a}^{\dagger}\hat{a}=\hat{1},\label{eq:commutator_a_ad}
+\end{equation}
+
+\end_inset
+
+which leads to
+\begin_inset Formula 
+\[
+-\hat{a}^{\dagger}\hat{a}=\hat{1}-\hat{a}\hat{a}^{\dagger}\quad\text{and}\quad\hat{a}\hat{a}^{\dagger}=\hat{1}+\hat{a}^{\dagger}\hat{a}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\begin{align*}
+\hat{a}^{\dagger}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right) & =\hat{a}^{\dagger}\hat{a}\hat{a}^{\dagger}-\hat{a}^{\dagger}\hat{a}\hat{a}=\hat{a}^{\dagger}\left(\hat{1}+\hat{a}^{\dagger}\hat{a}\right)+\left(\hat{1}-\hat{a}\hat{a}^{\dagger}\right)\hat{a}\\
+ & =\hat{a}^{\dagger}+\hat{a}^{\dagger}\hat{a}^{\dagger}\hat{a}+\hat{a}-\hat{a}\hat{a}^{\dagger}\hat{a}\\
+ & =\left(\hat{a}^{\dagger}+\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)\hat{a}^{\dagger}\hat{a}
+\end{align*}
+
+\end_inset
+
+or
+\begin_inset Formula 
+\[
+\hat{a}^{\dagger}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)-\left(\hat{a}^{\dagger}-a\right)\hat{a}^{\dagger}\hat{a}=\left(\hat{a}^{\dagger}+\hat{a}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus:
+\begin_inset Formula 
+\begin{align*}
+\hat{a}^{\dagger}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)^{2} & =\left(\left(\hat{a}^{\dagger}+\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)\hat{a}^{\dagger}\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =\left(\hat{a}^{\dagger}+\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)\hat{a}^{\dagger}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =\left(\hat{a}^{\dagger}+\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)\left(\left(\hat{a}^{\dagger}+\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)\hat{a}^{\dagger}\hat{a}\right)\\
+ & =2\left(\hat{a}^{\dagger}+\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)^{2}\hat{a}^{\dagger}\hat{a}
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\hat{a}^{\dagger}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)^{3} & =\left[2\left(\hat{a}^{\dagger}+\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)^{2}\hat{a}^{\dagger}\hat{a}\right]\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =2\left(\hat{a}^{\dagger}+\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}+\left(\hat{a}^{\dagger}-a\right)^{2}\hat{a}^{\dagger}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =2\left(\hat{a}^{\dagger}+\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}+\left(\hat{a}^{\dagger}-a\right)^{2}\left(\left(\hat{a}^{\dagger}+\hat{a}\right)+\left(\hat{a}^{\dagger}-a\right)\hat{a}^{\dagger}\hat{a}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What happens when we try to commute 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\hat{a}^{\dagger}-\hat{a}\right)$
+\end_inset
+
+?
+\begin_inset Formula 
+\begin{align*}
+\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right) & =\hat{a}\hat{a}^{\dagger}-\hat{a}\hat{a}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since we want to factor out a 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ on the right, we must change 
+\begin_inset Formula $\hat{a}\hat{a}^{\dagger}$
+\end_inset
+
+ for something of the form 
+\begin_inset Formula $\hat{\xi}\hat{a}$
+\end_inset
+
+ :
+\begin_inset Formula 
+\[
+\hat{a}\hat{a}^{\dagger}\stackrel{\left(\ref{eq:commutator_a_ad}\right)}{=}\hat{1}+\hat{a}^{\dagger}\hat{a}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\begin{align*}
+\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right) & =\hat{1}+\hat{a}^{\dagger}\hat{a}-\hat{a}\hat{a}\\
+ & =\hat{1}+\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then,
+\begin_inset Formula 
+\begin{align*}
+\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)^{2} & =\left[\hat{1}+\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}\right]\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-\hat{a}\right)\left[\hat{1}+\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}\right]\\
+ & =2\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\hat{a}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Next,
+\begin_inset Formula 
+\begin{align*}
+\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)^{3} & =\left(2\left(\hat{a}^{\dagger}-\hat{a}\right)+\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\hat{a}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =2\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}+\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =2\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}+\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\left(\hat{1}+\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}\right)\\
+ & =3\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}+\left(\hat{a}^{\dagger}-\hat{a}\right)^{3}\hat{a}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Therefore:
+\begin_inset Formula 
+\[
+\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}=k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}+\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\hat{a}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\hat{a} & \frac{1}{k!}\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\\
+ & =\frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\hat{a}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\\
+ & =\frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left[k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}+\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\hat{a}\right]\\
+ & =\frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}+\frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\hat{a}\\
+\end{align*}
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\begin{align}
+\hat{a}e^{-S_{\mathcal{A}}} & =\hat{a}\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)\nonumber \\
+ & =\left(\sum_{k=0}^{\infty}\hat{a}\frac{1}{k!}\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)\nonumber \\
+ & =\sum_{k=0}^{\infty}\frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}\nonumber \\
+ & \quad+\sum_{k=0}^{\infty}\frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\hat{a}\label{eq:a_exp_negSA}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the first summation of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_exp_negSA"
+
+\end_inset
+
+), the 
+\begin_inset Formula $k=0$
+\end_inset
+
+ term vanishes to that it may be written as
+\begin_inset Formula 
+\begin{align*}
+\sum_{k=0}^{\infty} & \frac{1}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}\\
+ & =\sum_{k=1}^{\infty}\frac{k}{k!}\left(-1\right)^{k}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}\\
+ & =-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\sum_{k=1}^{\infty}\frac{1}{k-1!}\left(-1\right)^{k-1}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k-1}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}\\
+ & =-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\sum_{j=0}^{\infty}\frac{1}{j!}\left(-1\right)^{j}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{j}\left(\hat{a}^{\dagger}-\hat{a}\right)^{j}\\
+ & =-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\exp\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\\
+ & =-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{-S_{\mathcal{A}}}
+\end{align*}
+
+\end_inset
+
+where we have used the change of variables 
+\begin_inset Formula $j=k-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Including the second summation of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_exp_negSA"
+
+\end_inset
+
+), we have
+\begin_inset Formula 
+\begin{equation}
+\hat{a}e^{-S_{\mathcal{A}}}=-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{-S_{\mathcal{A}}}+e^{-S_{\mathcal{A}}}\hat{a}\label{eq:result_a_exp_negSA}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Now, consider 
+\begin_inset Formula $e^{S_{\mathcal{A}}}\hat{a}^{\dagger}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+e^{S_{\mathcal{A}}}\hat{a}^{\dagger}=\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\right]^{k}\right)\hat{a}^{\dagger}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To analyze this, we need to evaluate 
+\begin_inset Formula $\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\hat{a}^{\dagger}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Start with 
+\begin_inset Formula $k=1$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}^{\dagger} & =\hat{a}^{\dagger}\hat{a}^{\dagger}-\hat{a}\hat{a}^{\dagger}=\hat{a}^{\dagger}\hat{a}^{\dagger}-\left(\hat{1}+\hat{a}^{\dagger}\hat{a}\right)\\
+ & =\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)-\hat{1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now consider 
+\begin_inset Formula $k=2$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\hat{a}^{\dagger} & =\left(\hat{a}^{\dagger}-\hat{a}\right)\left(\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)-\hat{1}\right)\\
+ & =\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)-\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =\left[\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)-\hat{1}\right]\left(\hat{a}^{\dagger}-\hat{a}\right)-\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+ & =\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}-2\left(\hat{a}^{\dagger}-\hat{a}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $k=3$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\left(\hat{a}^{\dagger}-\hat{a}\right)^{3}\hat{a}^{\dagger} & =\left(\hat{a}^{\dagger}-\hat{a}\right)\left[\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\hat{a}^{\dagger}\right]\\
+ & =\left(\hat{a}^{\dagger}-\hat{a}\right)\left[\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}-2\left(\hat{a}^{\dagger}-\hat{a}\right)\right]\\
+ & =\left(\hat{a}^{\dagger}-\hat{a}\right)\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}-2\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\\
+ & =\left[\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)-\hat{1}\right]\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}-2\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}\\
+ & =\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)^{3}-3\left(\hat{a}^{\dagger}-\hat{a}\right)^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For general 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\hat{a}^{\dagger}=\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}-k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now,
+\begin_inset Formula 
+\begin{align}
+e^{S_{\mathcal{A}}}\hat{a}^{\dagger} & =\sum_{k=0}^{\infty}\frac{1}{k!}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\hat{a}^{\dagger}\nonumber \\
+ & =\sum_{k=0}^{\infty}\frac{1}{k!}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left[\hat{a}^{\dagger}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}-k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}\right]\nonumber \\
+ & =\hat{a}^{\dagger}\sum_{k=0}^{\infty}\frac{1}{k!}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}\left(\hat{a}^{\dagger}-\hat{a}\right)^{k}\nonumber \\
+ & \quad-\sum_{k=0}^{\infty}\frac{1}{k!}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{k}k\left(\hat{a}^{\dagger}-\hat{a}\right)^{k-1}\nonumber \\
+ & =\hat{a}^{\dagger}e^{S_{\mathcal{A}}}-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{S_{\mathcal{A}}}\label{eq:result_exp_SA_ad}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Next, combine (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:result_a_exp_negSA"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:result_exp_SA_ad"
+
+\end_inset
+
+) to write 
+\begin_inset Formula $\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U}$
+\end_inset
+
+ of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:reducedOdorantPolaronTransform"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U} & =\omega_{0}e^{S_{\mathcal{A}}}\hat{a}^{\dagger}\hat{a}e^{-S_{\mathcal{A}}}\nonumber \\
+ & =\omega_{0}\left\{ \hat{a}^{\dagger}e^{S_{\mathcal{A}}}-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{S_{\mathcal{A}}}\right\} \left\{ -\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{-S_{\mathcal{A}}}+e^{-S_{\mathcal{A}}}\hat{a}\right\} \nonumber \\
+ & =\omega_{0}\left(-\hat{a}^{\dagger}e^{S_{\mathcal{A}}}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{-S_{\mathcal{A}}}+\hat{a}^{\dagger}e^{S_{\mathcal{A}}}e^{-S_{\mathcal{A}}}\hat{a}\right)\nonumber \\
+ & \quad+\omega_{0}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{2}e^{S_{\mathcal{A}}}e^{-S_{\mathcal{A}}}-\omega_{0}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{S_{\mathcal{A}}}e^{-S_{\mathcal{A}}}\hat{a}\nonumber \\
+ & =\omega_{0}\left(-\hat{a}^{\dagger}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)+\hat{a}^{\dagger}\hat{a}\right)\nonumber \\
+ & \quad+\omega_{0}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)^{2}-\omega_{0}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\hat{a}\nonumber \\
+ & =\omega_{0}\hat{a}^{\dagger}\hat{a}+\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)-\omega_{0}\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)\label{eq:PolaronTransformedFreeOdorant}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since
+\begin_inset Formula 
+\[
+u_{X}\equiv\frac{\gamma_{X}}{\omega_{0}},
+\]
+
+\end_inset
+
+we have
+\begin_inset Formula 
+\[
+\omega_{0}u_{D}=\gamma_{D}\quad\text{and}\quad\omega_{0}u_{A}=\gamma_{A}
+\]
+
+\end_inset
+
+so that Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedFreeOdorant"
+
+\end_inset
+
+) becomes
+\begin_inset Formula 
+\begin{equation}
+\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U}=\omega_{0}\hat{a}^{\dagger}\hat{a}+\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)-\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)\label{eq:PolaronTransformedFreeOdorantv02}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Next, we turn to 
+\begin_inset Formula $\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)$
+\end_inset
+
+, the odorant-electron interaction.
+ The polaron transform of this is 
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)\hat{U}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Begin by considering the transformation
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger} & \left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}\hat{U}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Start with
+\begin_inset Formula 
+\begin{align*}
+\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right) & \hat{a}\hat{U}\\
+ & =\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}\\
+ & \stackrel{\left(\ref{eq:a_exp_negSA}\right)}{=}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{-S_{\mathcal{A}}}+e^{-S_{\mathcal{A}}}\hat{a}\right]e^{-S_{\mathcal{B}}}\\
+ & =\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}+e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}\hat{a}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+See that 
+\begin_inset Formula $\left(\alpha\hat{P}_{D}+\beta\hat{P}_{A}\right)$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $\left(\mu\hat{P}_{D}+\nu\hat{P}_{A}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\left(\alpha\hat{P}_{D}+\beta\hat{P}_{A}\right)\left(\mu\hat{P}_{D}+\nu\hat{P}_{A}\right)=\alpha\mu\hat{P}_{D}+\beta\mu\hat{P}_{A}=\left(\mu\hat{P}_{D}+\nu\hat{P}_{A}\right)\left(\alpha\hat{P}_{D}+\beta\hat{P}_{A}\right)\label{eq:xPD_yPA_wPD_zPA_commute}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus, 
+\begin_inset Formula $\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)$
+\end_inset
+
+ commutes with both 
+\begin_inset Formula $e^{\pm S_{\mathcal{A}}}$
+\end_inset
+
+ and 
+\begin_inset Formula $e^{\pm S_{\mathcal{B}}}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Therefore,
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}\hat{U} & =e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\nonumber \\
+ & \quad\times\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}+e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}\hat{a}\right]\nonumber \\
+ & =\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\nonumber \\
+ & \quad\times\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}+e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}\hat{a}\right]\nonumber \\
+ & =\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left[-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)+\hat{a}\right]\nonumber \\
+ & =-\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)+\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}\label{eq:PolaronTransform_gDPD_plus_gAPA_a}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now, transform 
+\begin_inset Formula $\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}\hat{U}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Start with 
+\begin_inset Formula $\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger} & \stackrel{\left(\ref{eq:xPD_yPA_wPD_zPA_commute}\right)}{=}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}\hat{a}^{\dagger}\\
+ & \stackrel{\left(\ref{eq:result_exp_SA_ad}\right)}{=}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)e^{S_{\mathcal{B}}}\left[\hat{a}^{\dagger}e^{S_{\mathcal{A}}}-\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{S_{\mathcal{A}}}\right]\\
+ & =\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}-\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now, evaluate 
+\begin_inset Formula $\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}\hat{U}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}\hat{U} & =\left[\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}-\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)e^{S_{\mathcal{B}}}e^{S_{\mathcal{A}}}\right]\nonumber \\
+ & \quad\times e^{-S_{\mathcal{A}}}e^{-S_{\mathcal{B}}}\nonumber \\
+ & =\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}-\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\label{eq:eq:PolaronTransform_gDPD_plus_gAPA_ad}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now, add (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransform_gDPD_plus_gAPA_a"
+
+\end_inset
+
+) to (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eq:PolaronTransform_gDPD_plus_gAPA_ad"
+
+\end_inset
+
+) in order to obtain 
+\begin_inset Formula $\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)\hat{U}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)\hat{U}=\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)-2\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\label{eq:PolaronTransformedOdorantElectronInteraction}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Finally, when we add (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedFreeOdorantv02"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedOdorantElectronInteraction"
+
+\end_inset
+
+), we get
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger}\omega_{0}\hat{a}^{\dagger}\hat{a}\hat{U} & +\hat{U}^{\dagger}\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{a}^{\dagger}\hat{U}\nonumber \\
+ & =\omega_{0}\hat{a}^{\dagger}\hat{a}+\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)-\cancel{\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)}\nonumber \\
+ & \quad+\cancel{\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(\hat{a}^{\dagger}+\hat{a}\right)}-2\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\left(u_{D}\hat{P}_{D}+u_{A}\hat{P}_{A}\right)\nonumber \\
+ & =\omega_{0}\hat{a}^{\dagger}\hat{a}+\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)-2\left(\gamma_{D}u_{D}\hat{P}_{D}+\gamma_{A}u_{A}\hat{P}_{A}\right)\nonumber \\
+ & =\omega_{0}\hat{a}^{\dagger}\hat{a}+\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)-2\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)\nonumber \\
+ & =\omega_{0}\hat{a}^{\dagger}\hat{a}-\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)\label{eq:PolaronTransformedOdorantAndOdorantElectronInteraction}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, we write 
+\begin_inset Formula $\gamma_{X}u_{X}=\omega_{0}u_{X}^{2}$
+\end_inset
+
+, since 
+\begin_inset Formula $u_{X}\equiv\frac{\gamma_{X}}{\omega_{0}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Polaron Transformation of the Interaction
+\end_layout
+
+\begin_layout Itemize
+Now we transform the environment oscillators and their interaction with
+ the electronic system: 
+\begin_inset Formula 
+\[
+\hat{H}_{E}=\sum_{k}\left[\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\left(\gamma_{kD}\hat{P}_{D}+\gamma_{kA}\hat{P}_{A}\right)\left(\hat{b}_{k}^{\dagger}+\hat{b}_{k}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The transform is
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger} & \hat{H}_{E}\hat{U}\nonumber \\
+ & =\hat{U}^{\dagger}\left\{ \sum_{k}\left[\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\left(\gamma_{kD}\hat{P}_{D}+\gamma_{kA}\hat{P}_{A}\right)\left(\hat{b}_{k}^{\dagger}+\hat{b}_{k}\right)\right]\right\} \hat{U}\nonumber \\
+ & =\sum_{k}\left[\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}-\omega_{k}\left(\alpha_{kD}^{2}\hat{P}_{D}+\alpha_{kD}^{2}\hat{P}_{A}\right)\right],\label{eq:PolaronTransformedBathAndBathElectronInteraction}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We write (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedBathAndBathElectronInteraction"
+
+\end_inset
+
+) by analogy with (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedOdorantAndOdorantElectronInteraction"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Here,
+\begin_inset Formula 
+\[
+\alpha_{kX}\equiv\frac{\gamma_{kX}}{\omega_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+The Fully-transformed Hamiltonian (Derived)
+\end_layout
+
+\begin_layout Itemize
+Now we add (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedElectron"
+
+\end_inset
+
+), (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedOdorantAndOdorantElectronInteraction"
+
+\end_inset
+
+), and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronTransformedBathAndBathElectronInteraction"
+
+\end_inset
+
+) to obtain the polaron-transformed Hamiltonian:
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger}\hat{H}\hat{U} & =\epsilon_{D}\hat{P}_{D}+\epsilon_{A}\hat{P}_{A}+V\left(\hat{P}_{DA}\mathcal{A}_{+}\mathcal{B}_{+}+\hat{P}_{AD}\mathcal{A}_{-}\mathcal{B}_{-}\right)\\
+ & \quad+\omega_{0}\hat{a}^{\dagger}\hat{a}-\omega_{0}\left(u_{D}^{2}\hat{P}_{D}+u_{A}^{2}\hat{P}_{A}\right)\\
+ & \quad+\sum_{k}\left[\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}-\omega_{k}\left(\alpha_{kD}^{2}\hat{P}_{D}+\alpha_{kD}^{2}\hat{P}_{A}\right)\right]\\
+ & =\epsilon_{D}^{\prime}\hat{P}_{D}+\epsilon_{A}^{\prime}\hat{P}_{A}+V\left(\hat{P}_{DA}\mathcal{A}_{+}\mathcal{B}_{+}+\hat{P}_{AD}\mathcal{A}_{-}\mathcal{B}_{-}\right)\\
+ & \quad+\omega_{0}\hat{a}^{\dagger}\hat{a}+\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}
+\end{align*}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\epsilon_{X}^{\prime}=\epsilon_{X}-\omega_{0}u_{X}^{2}-\sum_{k}\omega_{k}\alpha_{kX}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Identifying
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{SP} & =\epsilon_{D}^{\prime}\hat{P}_{D}+\epsilon_{A}^{\prime}\hat{P}_{A}+\omega_{0}\hat{a}^{\dagger}\hat{a}\\
+\hat{H}_{IP} & =V\left(\hat{P}_{DA}\mathcal{A}_{+}\mathcal{B}_{+}+\hat{P}_{AD}\mathcal{A}_{-}\mathcal{B}_{-}\right)\\
+\hat{H}_{B} & =\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}
+\end{align*}
+
+\end_inset
+
+we now have
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\hat{H}\hat{U}=\hat{H}_{SP}+\hat{H}_{IP}+\hat{H}_{B}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observations: the polaron transformation has
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+canceled the position dependence 
+\begin_inset Formula $\hat{Q}\propto\left(\hat{a}^{\dagger}+\hat{a}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{Q}_{k}\propto\left(\hat{b}^{\dagger}+\hat{b}\right)$
+\end_inset
+
+ from the Hamiltonian
+\end_layout
+
+\begin_layout Itemize
+preserved the 
+\begin_inset Formula $\left(k_{D}\hat{P}_{D}+k_{A}\hat{P}_{A}\right)$
+\end_inset
+
+ component of the Hamiltonian
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+The Fully-transformed Hamiltonian (Reported in the Reference)
+\end_layout
+
+\begin_layout Itemize
+We turn back to the result reported in the reference
+\end_layout
+
+\begin_layout Itemize
+The polaron-transformed Hamiltonian is
+\begin_inset Formula 
+\[
+\hat{H}_{\text{P}}=\hat{U}^{\dagger}\hat{H}\hat{U}=\hat{H}_{SP}+\hat{H}_{B}+\hat{H}_{IP}
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{SP} & =\epsilon_{D}^{\prime}\ket{D}\bra{D}+\epsilon_{A}^{\prime}\ket{A}\bra{A}+\omega_{0}\hat{a}^{\dagger}\hat{a},\\
+\hat{H}_{B} & =\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k},\,\text{and}\\
+\hat{H}_{IP} & =V\left(\ket{D}\bra{A}\mathcal{A}_{+}\mathcal{B}_{+}+\ket{A}\bra{D}\mathcal{A}_{-}\mathcal{B}_{-}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The polaron-shifted on-site energy 
+\begin_inset Formula $\epsilon_{X}^{\prime}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\epsilon_{X}^{\prime}=\epsilon_{X}-\omega_{0}u_{X}^{2}-\sum_{k}\omega_{k}\alpha_{kX}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+There are new oscillator interaction operators:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{A_{\pm}} & =\mathcal{D}\left(\pm\left(u_{D}-u_{A}\right)\right),\\
+\mathcal{B}_{\pm} & =\prod_{k}\mathcal{D}_{k}\left(\pm\left(\alpha_{kD}-\alpha_{kA}\right)\right),\\
+\mathcal{D}\left(u\right) & =e^{u\hat{a}^{\dagger}-u^{\ast}\hat{a}},\;\text{and}\\
+\mathcal{D}_{k}\left(\alpha_{k}\right) & =e^{\alpha_{k}\hat{b}_{k}^{\dagger}-\alpha_{k}^{\ast}\hat{b}_{k}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The polaron transformation leaves the operators 
+\begin_inset Formula $\left\{ \ket{X}\bra{X}\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+The Polaron Master Equation
+\end_layout
+
+\begin_layout Itemize
+Next, the authors state that they go to the interaction picture, and they
+ arrive at the following master equation:
+\begin_inset Formula 
+\begin{align*}
+\dot{\tilde{\rho}}_{SP}\left(t\right) & =-V^{2}\int_{0}^{\infty}d\tau\bigg\{\bigg(\left[\hat{P}_{AD}\mathcal{A}_{-}\left(t\right),\hat{P}_{DA}\mathcal{A}_{+}\left(t-\tau\right)\tilde{\rho}_{SP}\left(t\right)\right]e^{-i\epsilon\tau}\\
+ & \quad\quad\quad\quad\quad+\left[\hat{P}_{DA}\mathcal{A}_{+}\left(t\right),\hat{P}_{AD}\mathcal{A}_{-}\left(t-\tau\right)\tilde{\rho}_{SP}\left(t\right)\right]e^{i\epsilon\tau}\bigg)C\left(\tau\right)+\text{H.c.}\bigg\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The authors reference the following:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+H.P.
+ Breuer and F.
+ Petruccione, 
+\emph on
+The Theory of Open Quantum Systems
+\emph default
+ (Oxford University Press, 2002).
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Transformation from the Schrödinger Picture to the Interaction Picture
+\end_layout
+
+\begin_layout Itemize
+Start with the Schrödinger picture for a system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consisder a system and an environment 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $E$
+\end_inset
+
+, with Hamiltonians 
+\begin_inset Formula $\hat{H}_{S}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{H}_{E}$
+\end_inset
+
+, and an interaction 
+\begin_inset Formula $\hat{H}_{SE}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define the free Hamiltonian as describing the energetics of the free system
+\begin_inset Formula 
+\[
+\hat{H}_{0}=\hat{H}_{S}+\hat{H}_{E}
+\]
+
+\end_inset
+
+and explicitly identify the interaction term, 
+\begin_inset Formula $\hat{H}_{I}$
+\end_inset
+
+, which may have time dependence:
+\begin_inset Formula 
+\[
+\hat{H}_{I}\left(t\right)=\hat{H}_{SE}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The total Hamiltonian is
+\begin_inset Formula 
+\[
+\hat{H}\left(t\right)=\hat{H}_{0}+\hat{H}_{I}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The global system time evolution operator is
+\begin_inset Formula 
+\[
+\hat{U}\left(t,t_{0}\right)=e^{-\frac{i}{\hbar}\hat{H}\left(t-t_{0}\right)}
+\]
+
+\end_inset
+
+if the 
+\begin_inset Formula $\hat{H}\left(t\right)$
+\end_inset
+
+ is constant or, more generally,
+\begin_inset Formula 
+\[
+\hat{U}\left(t,t_{0}\right)=\text{T}_{\leftarrow}\exp\left[-\frac{i}{\hbar}\int_{t_{0}}^{t}ds\,\hat{H}\left(s\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $\text{T}_{\leftarrow}$
+\end_inset
+
+ denotes the chronological time-odering operator, which orders products
+ of time-dependent operators such that their time-arguments increase from
+ right to left
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The time-dependent state vector may be given by
+\begin_inset Formula 
+\[
+\ket{\psi\left(t\right)}=\hat{U}\left(t,t_{0}\right)\ket{\psi\left(t_{0}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\ket{\psi\left(t_{0}\right)}$
+\end_inset
+
+ is written in terms of normalized, time-evolving state vectors 
+\begin_inset Formula $\ket{\psi_{\alpha}\left(t_{0}\right)}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ket{\psi\left(t_{0}\right)}=\sum_{\alpha}c_{\alpha}\ket{\psi_{\alpha}\left(t_{0}\right)}
+\]
+
+\end_inset
+
+then
+\begin_inset Formula 
+\[
+\ket{\psi\left(t\right)}=\hat{U}\left(t,t_{0}\right)\left(\sum_{\alpha}w_{\alpha}\ket{\psi_{\alpha}\left(t_{0}\right)}\right)=\sum_{\alpha}c_{\alpha}\hat{U}\left(t,t_{0}\right)\ket{\psi_{\alpha}\left(t_{0}\right)}\,.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The time dependent density operator may be written as
+\begin_inset Formula 
+\begin{align}
+\hat{\rho}\left(t\right) & =\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\label{eq:quantumLiouville}\\
+ & =\sum_{\alpha}w_{\alpha}\hat{U}\left(t,t_{0}\right)\ket{\psi_{\alpha}\left(t_{0}\right)}\bra{\psi_{\alpha}\left(t_{0}\right)}\hat{U}^{\dagger}\left(t,t_{0}\right)\,.\nonumber 
+\end{align}
+
+\end_inset
+
+ with the explicit connection that
+\begin_inset Formula 
+\[
+w_{\alpha}=c_{\alpha}c_{\alpha}^{\ast}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quantumLiouville"
+
+\end_inset
+
+) may be differentiated to obtain
+\begin_inset Formula 
+\begin{equation}
+\dot{\hat{\rho}}\left(t\right)=-\frac{i}{\hbar}\left[\hat{H}\left(t\right),\hat{\rho}\left(t\right)\right]\label{eq:quantumLiouvilleDifferential}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quantumLiouvilleDifferential"
+
+\end_inset
+
+) may be written in analogous form
+\begin_inset Formula 
+\begin{equation}
+\dot{\hat{\rho}}\left(t\right)=\mathcal{L}\left(t\right)\hat{\rho}\left(t\right)\label{eq:SuperoperatorEquation}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ is the Liuville operator, defined using
+\begin_inset Formula 
+\[
+\mathcal{L}\left(t\right)\hat{\rho}\left(t\right)\equiv-\frac{i}{\hbar}\left[\hat{H}\left(t\right),\hat{\rho}\left(t\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ is actually a superoperator, because it acts on an operator and returns
+ another operator.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Because of the form of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SuperoperatorEquation"
+
+\end_inset
+
+), we can write
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t\right)=\text{T}_{\leftarrow}\exp\left[\int_{t_{0}}^{t}ds\,\mathcal{L}\left(s\right)\right]\hat{\rho}\left(t_{0}\right),
+\]
+
+\end_inset
+
+which reduces to
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t\right)=\exp\left(\mathcal{L}\left(t-t_{0}\right)\right)\hat{\rho}\left(t_{0}\right)
+\]
+
+\end_inset
+
+ for constant 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To transform to the interaction picture:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define time evolution operators
+\begin_inset Formula 
+\[
+\hat{U}_{0}\left(t,t_{0}\right)\equiv e^{-i\hat{H}_{0}\left(t-t_{0}\right)}
+\]
+
+\end_inset
+
+ and
+\begin_inset Formula 
+\[
+\hat{U}_{I}\left(t,t_{0}\right)\equiv\hat{U}_{0}^{\dagger}\hat{U}\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+An operator 
+\begin_inset Formula $\hat{A}\left(t\right)$
+\end_inset
+
+ in the Schrödinger picture is transformed to 
+\begin_inset Formula $\hat{A}_{I}\left(t\right)$
+\end_inset
+
+ the interaction picture as follows:
+\begin_inset Formula 
+\[
+\hat{A}_{I}\left(t\right)=\hat{U}_{0}^{\dagger}\left(t,t_{0}\right)\hat{A}\left(t\right)\hat{U}_{0}\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The density operator 
+\begin_inset Formula $\hat{\rho}\left(t\right)$
+\end_inset
+
+ is transformed to the interaction picture density matrix 
+\begin_inset Formula $\hat{\rho}_{I}\left(t\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\hat{\rho}_{I}\left(t\right) & =\hat{U}_{0}^{\dagger}\left(t,t_{0}\right)\hat{\rho}\left(t\right)\hat{U}_{0}\left(t,t_{0}\right)\nonumber \\
+ & =\hat{U}_{0}^{\dagger}\left(t,t_{0}\right)\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{U}_{0}\left(t,t_{0}\right)\nonumber \\
+ & =\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\label{eq:DenistyOperatorIP}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The interaction picture time-evolution operator 
+\begin_inset Formula $\hat{U}_{I}\left(t,t_{0}\right)$
+\end_inset
+
+ solves the differential equation
+\begin_inset Formula 
+\[
+i\hbar\frac{\partial}{\partial t}\hat{U}_{I}\left(t,t_{0}\right)=\hat{H}_{I}\left(t\right)\hat{U}_{I}\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+-i\hbar\frac{\partial}{\partial t}\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)=\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\hat{H}_{I}^{\dagger}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Take the derivative of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DenistyOperatorIP"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align}
+\frac{d}{dt}\hat{\rho}_{I}\left(t\right) & =\frac{d}{dt}\left(\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\right)\nonumber \\
+ & =\left(\frac{d}{dt}\hat{U}_{I}\left(t,t_{0}\right)\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)+\cancel{\hat{U}_{I}\left(t,t_{0}\right)\left(\frac{d}{dt}\hat{\rho}\left(t_{0}\right)\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)}+\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\left(\frac{d}{dt}\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\right)\nonumber \\
+ & =-\frac{i}{\hbar}\hat{H}_{I}\left(t\right)\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)+\frac{i}{\hbar}\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\hat{H}_{I}^{\dagger}\left(t\right)\nonumber \\
+ & =-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}_{I}\left(t\right)\right]\label{eq:QuantumLiouvilleIP}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The von Neumann equation may be written in its equivalent integral form:
+\begin_inset Formula 
+\[
+\hat{\rho}_{I}\left(t\right)=\hat{\rho}_{I}\left(t_{0}\right)-\frac{i}{\hbar}\int_{t_{0}}^{t}d\tau\left[\hat{H}_{I}\left(\tau\right),\hat{\rho}_{I}\left(\tau\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the same as Equation (3.343) [Mahler and Weberruss] and Equation
+ (3.112) [Breuer and Petruccione].
+ Up to this point, I have followed Breuer and Petruccione in that I have
+ not assumed that 
+\begin_inset Formula $t_{o}=0$
+\end_inset
+
+, but by Equation (3.112) B&P seem to make that assumption.
+ In both texts, it is then written in this form: 
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}_{I}\left(t\right)=\hat{\rho}_{I}\left(0\right)-\frac{i}{\hbar}\int_{0}^{t}d\tau\left[\hat{H}_{I}\left(\tau\right),\hat{\rho}_{I}\left(\tau\right)\right]\label{eq:TotalDensityMatrixIntegralIP}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+The Markovian Master Equation
+\end_layout
+
+\begin_layout Itemize
+Since the treatment of Breuer and Petruccione omits many mathematical details,
+ I turn to Mahler and Weberruss for more guidance
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Source: G.
+ Mahler and V.A.
+ Weberruss, Quantum Networks: Dynamics of Open Nanostructures (Second Edition),
+ Springer, 1998.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+See section 3.3.1.3 of this resource, starting on page 244
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The Mahler/Weberruss discussion also seems to agree with the Breuer/Petruccione
+ discussion (se section 3.3 Microscopic Derivation, 3.3.1 Weak-coupling limit)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Insert (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QuantumLiouvilleIP"
+
+\end_inset
+
+) into (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TotalDensityMatrixIntegralIP"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\hat{\rho}_{I}\left(t\right) & =-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}_{I}\left(0\right)-\frac{i}{\hbar}\int_{0}^{t}d\tau\left[\hat{H}_{I}\left(\tau\right),\hat{\rho}_{I}\left(\tau\right)\right]\right]\\
+ & =-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}_{I}\left(0\right)\right]-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),-\frac{i}{\hbar}\int_{0}^{t}d\tau\left[\hat{H}_{I}\left(\tau\right),\hat{\rho}_{I}\left(\tau\right)\right]\right]\\
+ & =-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}_{I}\left(0\right)\right]-\frac{1}{\hbar^{2}}\int_{0}^{t}d\tau\left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(\tau\right),\hat{\rho}_{I}\left(\tau\right)\right]\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We will assume that at 
+\begin_inset Formula $t_{0}=0$
+\end_inset
+
+, the environment and system are unentangled [as in Equation (3.345) in Mahler
+ and Weberruss):
+\begin_inset Formula 
+\[
+\hat{\rho}_{I}\left(0\right)=\hat{\rho}\left(0\right)=\hat{\rho}_{S}\left(0\right)\otimes\hat{\rho}_{B}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To obtain reduced dynamics of the system only, we trace out the degrees
+ of freedom of the bath
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\left\{ \ket{r}\right\} $
+\end_inset
+
+ be a complete, orthonormal set of basis states for the environment.
+ Then
+\begin_inset Formula 
+\[
+\hat{R}_{S}\left(t\right)=\text{Tr}_{E}\;\hat{\rho}\left(t\right)=\sum_{r}\Braket{r|\hat{\rho}\left(t\right)|r}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\text{Tr}_{B}$
+\end_inset
+
+ denotes the partial trace over the environmental degrees of freedom
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+L
+\end_layout
+
+\begin_layout Subsection
+imiting Cases
+\end_layout
+
+\begin_layout Subsubsection
+Odorant absent
+\end_layout
+
+\begin_layout Itemize
+Here,
+\begin_inset Formula 
+\begin{align*}
+\dot{p}_{D}\left(t\right) & =-\Gamma_{DA}p_{D}\left(t\right)+\Gamma_{AD}p_{A}\left(t\right)\\
+\dot{p}_{A}\left(t\right) & =-\Gamma_{AD}p_{A}\left(t\right)+\Gamma_{DA}p_{D}\left(t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here:
+\begin_inset Formula 
+\begin{align*}
+\Gamma_{DA} & =V^{2}\Gamma\left(\epsilon\right)\\
+\Gamma_{AD} & =V^{2}\Gamma\left(-\epsilon\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Also,
+\begin_inset Formula 
+\[
+\Gamma\left(\pm\epsilon\right)=\int_{-\infty}^{\infty}d\tau\,e^{\pm i\epsilon\tau}C\left(\tau\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Here:
+\begin_inset Formula 
+\[
+C\left(\tau\right)=\exp\left(-\int_{0}^{\infty}d\omega\frac{J\left(\omega\right)}{\omega^{2}}\left[\left(1-\cos\omega\tau\right)\coth\left(\frac{\beta\omega}{2}\right)+i\sin\omega\tau\right]\right)
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\epsilon=\epsilon_{D}^{\prime}-\epsilon_{A}^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Quantum Liouville Equation
+\end_layout
+
+\begin_layout Itemize
+Start with the quantum Liouville equation in the Schrödinger picture
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}\left(t\right)=\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\label{eq:QuantumLiouville}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+with
+\begin_inset Formula 
+\[
+\hat{U}\left(t,t_{0}\right)=\exp\left(-\frac{i\left(t-t_{0}\right)}{\hbar}\hat{H}\right)
+\]
+
+\end_inset
+
+if 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is constant in time
+\end_layout
+
+\begin_layout Itemize
+and
+\begin_inset Formula 
+\begin{equation}
+\hat{U}\left(t,t_{0}\right)=\hat{T}_{\leftarrow}\exp\left(-\frac{i}{\hbar}\int_{t_{0}}^{t}ds\,\hat{H}\left(s\right)\right)\label{eq:TimeEvOperator}
+\end{equation}
+
+\end_inset
+
+ with 
+\begin_inset Formula $\hat{T}_{\leftarrow}$
+\end_inset
+
+ being the time-evolution operator
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Density operator
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t_{0}\right)=\sum_{\alpha}w_{\alpha}\ket{\psi_{\alpha}\left(t_{0}\right)}\bra{\psi_{\alpha}\left(t_{0}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $w_{\alpha}$
+\end_inset
+
+ are positive weights, and 
+\begin_inset Formula $\ket{\psi_{\alpha}\left(t_{0}\right)}$
+\end_inset
+
+ evolve in time according to the Schrödinger equation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Time-dependent density matrix
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t\right)=\sum_{\alpha}w_{\alpha}\hat{U}\left(t,t_{0}\right)\ket{\psi_{\alpha}\left(t_{0}\right)}\bra{\psi_{\alpha}\left(t_{0}\right)}\hat{U}^{\dagger}\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Differentiate (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QuantumLiouville"
+
+\end_inset
+
+) to get:
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\hat{\rho}\left(t\right) & =\frac{d}{dt}\left(\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\right)\\
+ & =\frac{d}{dt}\left(\hat{U}\left(t,t_{0}\right)\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)+\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\frac{d}{dt}\left(\hat{U}^{\dagger}\left(t,t_{0}\right)\right)\\
+ & =-\frac{i}{\hbar}\hat{H}\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)+\frac{i}{\hbar}\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{H}\hat{U}^{\dagger}\left(t,t_{0}\right)\\
+ & =-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}\left(t\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We often write
+\begin_inset Formula 
+\[
+\frac{d}{dt}\hat{\rho}\left(t\right)=\mathcal{L}\hat{\rho}\left(t\right)\quad\text{with}\quad\mathcal{L}\left(\cdot\right)=-\frac{i}{\hbar}\left[\hat{H},\left(\cdot\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For time-dependent 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t\right)=\hat{T}_{\leftarrow}\exp\left(\int_{t_{0}}^{t}ds\,\mathcal{L}\left(s\right)\right)\hat{\rho}\left(t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Derive the Polaron Master Equation
+\end_layout
+
+\begin_layout Itemize
+Define the polaron transformation
+\begin_inset Formula 
+\[
+\hat{U}=e^{-\left(S_{\mathcal{A}}+S_{\mathcal{B}}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here:
+\begin_inset Formula 
+\begin{align*}
+S_{\mathcal{A}} & =\left(u_{D}\ket{D}\bra{D}+u_{A}\ket{A}\bra{A}\right)\left(\hat{a}^{\dagger}-\hat{a}\right)\\
+S_{\mathcal{B}} & =\left(\alpha_{kD}\ket{D}\bra{D}+\alpha_{kA}\ket{A}\bra{A}\right)\left(\hat{b}_{k}^{\dagger}-\hat{b}_{k}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+with
+\begin_inset Formula 
+\[
+u_{X}=\frac{\gamma_{X}}{\omega_{0}}\quad\text{and}\quad\alpha_{kX}=\frac{\gamma_{kX}}{\omega_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Transform the Hamiltonian 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ of Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HamiltonianSB"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+\hat{H}_{P}=U^{\dagger}\hat{H}\hat{U}=\hat{H}_{\text{SP}}+\hat{H}_{\text{B}}+\hat{H}_{\text{P}}
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\hat{H}_{\text{SP}}=\epsilon_{D}^{\prime}\ket{D}\bra{D}+\epsilon_{A}^{\prime}\ket{A}\bra{A},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{H}_{\text{B}}=\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{H}_{\text{IP}}=V\left(\ket{D}\bra{A}\mathcal{A}_{+}\mathcal{B}_{+}+\ket{A}\bra{D}\mathcal{A}_{-}\mathcal{B}_{-}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Derivation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Rewrite 
+\begin_inset Formula $\hat{H}_{\text{IP}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{H}_{\text{IP}}\left(t\right)=V\left(\ket{D}\bra{A}\left(t\right)\mathcal{A}_{+}\left(t\right)\mathcal{B}_{+}\left(t\right)+\ket{A}\bra{D}\left(t\right)\mathcal{A}_{-}\left(t\right)\mathcal{B}_{-}\left(t\right)\right)=\sum_{j}S_{j}\left(t\right)\mathcal{B}_{j}\left(t\right)
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $j\in\left\{ +,-\right\} $
+\end_inset
+
+ and
+\begin_inset Formula 
+\[
+S_{+}\left(t\right)=V\ket{D}\bra{A}e^{i\epsilon t}\mathcal{A}_{+}\left(t\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+S_{-}\left(t\right)=V\ket{A}\bra{D}e^{-i\epsilon t}\mathcal{A}_{-}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Here:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The polaron-shifted onsite energy is:
+\begin_inset Formula 
+\[
+\epsilon_{X}^{\prime}=\epsilon_{X}-\omega_{0}u_{X}^{2}-\sum_{k}\omega_{k}\alpha_{kX}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Oscillator interaction operators
+\begin_inset Formula 
+\begin{align*}
+\mathcal{A}_{\pm} & =\mathcal{D}\left(\pm\left(u_{D}-u_{A}\right)\right)\\
+\mathcal{B}_{\pm} & =\prod_{k}\mathcal{D}_{k}\left(\pm\left(\alpha_{kD}-\alpha_{kA}\right)\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These are new oscillation interaction operators written in terms of displacement
+ operators
+\end_layout
+
+\begin_layout Itemize
+Displacement operators:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{D}\left(u\right) & =\exp\left(u\hat{a}^{\dagger}-u^{\ast}\hat{a}\right)\quad\text{and}\\
+\mathcal{D}_{k}\left(\alpha_{k}\right) & =\exp\left(\alpha_{k}\hat{b}^{\dagger}-\alpha_{k}^{\ast}\hat{b}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+The polaron transformation leaves the operators 
+\begin_inset Formula $\hat{P}_{X}=\ket{X}\bra{X}$
+\end_inset
+
+ unchanged.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These will be used to calculate electronic populations
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection
+Heisenberg Picture
+\end_layout
+
+\begin_layout Itemize
+We define 
+\begin_inset Formula $\hat{A}_{\text{H}}$
+\end_inset
+
+ as a Heisenberg operator, a transformation of the Schrödinger-picture operator
+\begin_inset Formula 
+\[
+\hat{A}_{\text{H}}\left(t\right)=\hat{U}\left(t,t_{0}\right)\hat{H}\left(t\right)\hat{U}^{\dagger}\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the Heisenberg picture, we define the Heisenberg density operator 
+\begin_inset Formula $\hat{\rho}_{H}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{\rho}_{H}=\hat{\rho}\left(t_{0}\right)=\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{\rho}\left(t\right)\hat{U}\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Heisenberg operators 
+\begin_inset Formula $\hat{A}_{H}$
+\end_inset
+
+ contain the time dependence, while the density matrix 
+\begin_inset Formula $\hat{\rho}_{H}$
+\end_inset
+
+ is constant:
+\begin_inset Formula 
+\begin{equation}
+\hat{A}_{H}\left(t\right)=\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{A}\hat{U}\left(t,t_{0}\right)\label{eq:HeisenbergOperator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The expectation value of an observable is:
+\begin_inset Formula 
+\begin{align*}
+\braket{\hat{A}} & =\text{Tr}\,\left\{ \hat{A}\hat{\rho}\left(t\right)\right\} =\text{Tr}\,\left\{ \hat{A}\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\right\} \\
+ & =\text{Tr}\,\left\{ \hat{U}^{\dagger}\left(t,t_{0}\right)\hat{A}\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\right\} \\
+ & =\text{Tr}\,\left\{ \hat{A}_{H}\left(t\right)\hat{\rho}_{H}\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Take the derivative of Eqn.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeisenbergOperator"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\hat{A}_{H}\left(t\right) & =\frac{d}{dt}\left[\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{A}\left(t\right)\hat{U}\left(t,t_{0}\right)\right]\\
+ & =\left[\frac{d}{dt}\hat{U}^{\dagger}\left(t,t_{0}\right)\right]\hat{A}\left(t\right)\hat{U}\left(t,t_{0}\right)+\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{A}\left(t\right)\left[\frac{d}{dt}\hat{U}\left(t,t_{0}\right)\right]+\hat{U}^{\dagger}\left(t,t_{0}\right)\frac{\partial}{\partial t}\hat{A}\left(t\right)\hat{U}\left(t,t_{0}\right)\\
+ & =\frac{i}{\hbar}\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{H}\hat{A}\hat{U}\left(t,t_{0}\right)-\frac{i}{\hbar}\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{A}\hat{H}\hat{U}\left(t,t_{0}\right)+\frac{\partial\hat{A}_{H}\left(t\right)}{\partial t}\\
+ & =\frac{i}{\hbar}\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{H}\hat{U}\left(t,t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{A}\hat{U}\left(t,t_{0}\right)-\frac{i}{\hbar}\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{A}\hat{U}\left(t,t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\hat{H}\hat{U}\left(t,t_{0}\right)+\frac{\partial\hat{A}_{H}\left(t\right)}{\partial t}\\
+ & =\frac{i}{\hbar}\left[\hat{H}_{S},\hat{A}_{S}\right]+\frac{\partial\hat{A}_{H}\left(t\right)}{\partial t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Expectation value:
+\begin_inset Formula 
+\[
+\frac{d}{dt}\Braket{\hat{A}_{H}\left(t\right)}=\Braket{\frac{d}{dt}\hat{A}_{H}}=\mbox{tr}\,\left\{ \left(\frac{i}{\hbar}\left[\hat{H}_{S},\hat{A}_{S}\right]+\frac{\partial\hat{A}_{H}\left(t\right)}{\partial t}\right)\hat{\rho}_{H}\left(t_{0}\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the Ehrenfest equation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The time derivative of an expectation value is the same as the expectation
+ value of the corresponding Heisengberg-pict ur observable operator 
+\begin_inset Formula $\hat{A}_{H}\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection
+Interaction Picture
+\end_layout
+
+\begin_layout Itemize
+We split the Hamiltonian 
+\begin_inset Formula $\hat{H}\left(t\right)$
+\end_inset
+
+ into a time-dependent and a time-independent part:
+\begin_inset Formula 
+\[
+\hat{H}\left(t\right)=\hat{H}_{0}+\hat{H}_{I}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{H}_{0}$
+\end_inset
+
+ represents the energies of two decoupled systems
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{H}_{I}\left(t\right)$
+\end_inset
+
+ describes the interaction between the systems
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Introduce the unitary time-evolution operators
+\begin_inset Formula 
+\begin{align*}
+\hat{U}_{0}\left(t,t_{0}\right) & \equiv\exp\left[-\frac{i}{\hbar}\hat{H}_{0}\left(t-t_{0}\right)\right]\\
+\hat{U}_{I}\left(t,t_{0}\right) & \equiv\hat{U}_{0}^{\dagger}\left(t,t_{0}\right)\hat{U}\left(t,t_{0}\right)=\exp\left[\frac{i}{\hbar}\hat{H}_{0}\left(t-t_{0}\right)\right]\hat{U}\left(t,t_{0}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thus:
+\begin_inset Formula 
+\[
+\hat{U}\left(t,t_{0}\right)=\hat{U}_{0}\left(t,t_{0}\right)\hat{U}_{I}\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Define:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Interaction picture operator 
+\begin_inset Formula $\hat{A}_{I}\left(t\right)$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{equation}
+\hat{A}_{I}\left(t\right)=\hat{U}_{0}\left(t,t_{0}\right)\hat{A}\left(t\right)\hat{U}_{0}^{\dagger}\left(t,t_{0}\right)\label{eq:InteractionPictureOperator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Interaction picture density matrix 
+\begin_inset Formula $\hat{\rho}_{I}\left(t\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}_{I}\left(t\right)=\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\label{eq:InteractionPictureDensityMatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Expectation value of operator 
+\begin_inset Formula $\hat{A}\left(t\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\Braket{A\left(t\right)} & \equiv\text{tr}\,\left\{ \hat{A}\left(t\right)\hat{\rho}\left(t,t_{0}\right)\right\} \\
+ & =\text{tr}\,\left\{ \hat{A}\left(t\right)\hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\right\} \\
+ & =\text{tr}\,\left\{ \hat{A}\left(t\right)\hat{U}_{0}\left(t,t_{0}\right)\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\hat{U}_{0}^{\dagger}\left(t,t_{0}\right)\right\} \\
+ & =\text{tr}\,\left\{ \hat{U}_{0}^{\dagger}\left(t,t_{0}\right)\hat{A}\left(t\right)\hat{U}_{0}\left(t,t_{0}\right)\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}_{I}^{\dagger}\left(t,t_{0}\right)\right\} \\
+ & =\text{tr}\,\left\{ \hat{A}_{I}\left(t\right)\hat{U}_{I}\left(t,t_{0}\right)\hat{\rho}_{I}\left(t\right)\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dissipative Vibrational Model for Chiral Recognition in Olfaction
+\end_layout
+
+\begin_layout Subsection
+Sources
+\end_layout
+
+\begin_layout Itemize
+I'm following A.
+ Tirandaz, F.T.
+ Ghahramani, and A.
+ Shafiee, 
+\emph on
+Phys.
+ Rev.
+ E.
+
+\emph default
+ 
+\series bold
+92
+\series default
+, 032724 (2015).
+\end_layout
+
+\begin_layout Subsection
+Model
+\end_layout
+
+\begin_layout Itemize
+Begin with the free Hamiltonian
+\begin_inset Formula 
+\[
+\hat{H}_{0}=\hat{H}_{e}+\hat{H}_{o}+\hat{H}_{E}
+\]
+
+\end_inset
+
+which describes the non-interacting systems
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Electronic Hamiltonian 
+\begin_inset Formula $\hat{H}_{e}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{H}_{e}=\varepsilon_{D}\ket{D}\bra{D}+\varepsilon_{A}\ket{A}\bra{A}=\varepsilon_{D}\hat{P}_{D}+\varepsilon_{A}\hat{P}_{A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hamiltonian describing chirality 
+\begin_inset Formula $\hat{H}_{o}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{H}_{o}=-\frac{\delta}{2}\hat{\sigma}_{x}-\frac{\omega_{z}}{2}\hat{\sigma}_{z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\delta$
+\end_inset
+
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+frequency
+\begin_inset Quotes erd
+\end_inset
+
+ of tunneling between the two chiral states
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ is the localization frequency, the energy difference between two chiral
+ states
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Environmental Hamiltonian 
+\begin_inset Formula $\hat{H}_{E}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{H}_{E}=\sum_{i}\omega_{i}\hat{b}_{i}^{\dagger}\hat{b}_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Add the interaction term 
+\begin_inset Formula $\hat{H}_{\text{int}}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\hat{H}_{\text{int}} & =\Delta\left(\ket{A}\bra{D}+\ket{D}\bra{A}\right)+\left(\gamma_{D}\ket{D}\bra{D}+\gamma_{A}\ket{A}\bra{A}\right)\hat{\sigma}_{x}\\
+ & \quad+\sum_{i}\left(\gamma_{iD}\ket{D}\bra{D}+\gamma_{iA}\ket{A}\bra{A}\right)\left(\hat{b}_{i}^{\dagger}-\hat{b}_{i}\right)\\
+ & =\Delta\left(\hat{P}_{AD}+\hat{P}_{DA}\right)+\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{\sigma}_{x}+\sum_{i}\left(\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A}\right)\left(\hat{b}_{i}^{\dagger}-\hat{b}_{i}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Terms
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Electron tunneling 
+\begin_inset Formula $\Delta\left(\ket{A}\bra{D}+\ket{D}\bra{A}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Electron-chirality coupling: 
+\begin_inset Formula $\left(\gamma_{D}\ket{D}\bra{D}+\gamma_{A}\ket{A}\bra{A}\right)\hat{\sigma}_{x}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Electron-bath coupling: 
+\begin_inset Formula $\sum_{i}\left(\gamma_{iD}\ket{D}\bra{D}+\gamma_{iA}\ket{A}\bra{A}\right)\left(\hat{b}_{i}^{\dagger}+\hat{b}_{i}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Rewrite the total Hamiltonian:
+\begin_inset Formula 
+\begin{align*}
+\hat{H} & =\varepsilon_{D}\hat{P}_{D}+\varepsilon_{A}\hat{P}_{A}-\frac{\delta}{2}\hat{\sigma}_{x}-\frac{\omega_{z}}{2}\hat{\sigma}_{z}+\sum_{i}\omega_{i}\hat{b}_{i}^{\dagger}\hat{b}_{i}\\
+ & \quad\Delta\left(\hat{P}_{AD}+\hat{P}_{DA}\right)+\left(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A}\right)\hat{\sigma}_{x}+\sum_{i}\left(\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A}\right)\left(\hat{b}_{i}^{\dagger}-\hat{b}_{i}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Polaron Transformation
+\end_layout
+
+\begin_layout Itemize
+Define the unitary polaron transformation 
+\begin_inset Formula $\hat{U}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{U} & =\exp\left[-\frac{i}{2}\left(\lambda^{\prime}\ket{D}\bra{D}-\lambda\ket{A}\bra{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\ket{D}\bra{D}+\frac{\gamma_{iA}}{\omega_{i}}\ket{A}\bra{A}\right)\left(\hat{b}^{\dagger}+\hat{b}^{\dagger}\right)\right]\\
+ & =\exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}+\hat{b}^{\dagger}\right)\right]
+\end{align*}
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\lambda=\tan^{-1}\left(\frac{\delta-\gamma_{D}}{\omega_{z}}\right)\quad\text{and}\quad\lambda^{\prime}=\tan^{-1}\left(\frac{\delta+\gamma_{A}}{\omega_{z}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Apply the unitary transform:
+\begin_inset Formula 
+\begin{align*}
+\tilde{H}_{0} & =\hat{U}^{\dagger}\hat{H}_{0}\hat{U}=\hat{U}^{\dagger}\left(\hat{H}_{e}+\hat{H}_{o}+\hat{H}_{E}\right)\hat{U}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Start with the term 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{H}_{e}\hat{U}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger}\hat{H}_{e}\hat{U} & =\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\\
+ & \quad\times\left(\varepsilon_{D}\hat{P}_{D}+\varepsilon_{A}\hat{P}_{A}\right)\exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First, consider commuting 
+\begin_inset Formula $\hat{P}_{D}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{U}=\exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{P}_{D} & \exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\\
+ & =\hat{P}_{D}\left(\sum_{k=0}^{\infty}\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]^{k}\right)\left(\sum_{j=0}^{\infty}\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]^{j}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To further analyze this, we realize that
+\begin_inset Formula 
+\[
+\hat{P}_{D}\hat{P}_{D}^{k}=\hat{P}_{D}^{k}\hat{P}_{D}\quad\text{and}\quad\hat{P}_{D}\hat{P}_{A}^{k}=0
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\begin{align*}
+\hat{P}_{D} & \exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\\
+ & =\left(\sum_{k=0}^{\infty}\left[-\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]^{k}\right)\hat{P}_{D}\left(\sum_{j=0}^{\infty}\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]^{j}\right)\\
+ & =\left(\sum_{k=0}^{\infty}\left[-\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]^{k}\right)\left(\sum_{j=0}^{\infty}\left[\sum_{i}\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}\left(\hat{b}^{\dagger}-\hat{b}\right)\right]^{j}\right)\hat{P}_{D}\\
+ & =\exp\left[-\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\hat{P}_{D}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $\hat{P}_{D}$
+\end_inset
+
+, which acts on the electronic system, commutes with 
+\begin_inset Formula $\hat{\sigma}_{y}$
+\end_inset
+
+ (acts on the Hilbert space of the chirality) and 
+\begin_inset Formula $\left(\hat{b}^{\dagger}-\hat{b}\right)$
+\end_inset
+
+ (acts on the vibrational system)
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\hat{P}_{D}$
+\end_inset
+
+ commutes with 
+\begin_inset Formula $\exp\left[-\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}\left(\hat{b}^{\dagger}-\hat{b}\right)\right]$
+\end_inset
+
+, we may also write
+\begin_inset Formula 
+\begin{align}
+\hat{P}_{D} & \exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\nonumber \\
+ & =\hat{P}_{D}\exp\left[-\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\label{eq:PD_U_chiral}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similarly, 
+\begin_inset Formula 
+\begin{align}
+\hat{P}_{A} & \exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\nonumber \\
+ & =\hat{P}_{A}\exp\left[\frac{i}{2}\lambda\hat{P}_{A}\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\label{eq:PA_U_chiral}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Also, we can show that
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger}\hat{P}_{D} & =\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\hat{P}_{D}\nonumber \\
+ & =\exp\left[\sum_{i}\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]\hat{P}_{D}\label{eq:Ud_PD_chiral}
+\end{align}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align}
+\hat{U}^{\dagger}\hat{P}_{A} & =\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\hat{P}_{A}\nonumber \\
+ & =\exp\left[\sum_{i}\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[-\frac{i}{2}\lambda\hat{P}_{A}\hat{\sigma}_{y}\right]\hat{P}_{A}\label{eq:Ud_PA_chiral}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus, we can use (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PD_U_chiral"
+
+\end_inset
+
+)-(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Ud_PA_chiral"
+
+\end_inset
+
+) to write
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger}\hat{H}_{e}\hat{U} & =\hat{U}^{\dagger}\left(\varepsilon_{D}\hat{P}_{D}+\varepsilon_{A}\hat{P}_{A}\right)\hat{U}\\
+ & =\varepsilon_{D}\hat{U}^{\dagger}\hat{P}_{D}\hat{U}+\varepsilon_{A}\hat{U}^{\dagger}\hat{P}_{A}\hat{U}\\
+ & =\varepsilon_{D}\exp\left[\sum_{i}\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]\hat{P}_{D}\exp\left[-\frac{i}{2}\lambda^{\prime}\hat{P}_{D}\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\\
+ & \quad+\varepsilon_{A}\exp\left[\sum_{i}\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[-\frac{i}{2}\lambda\hat{P}_{A}\hat{\sigma}_{y}\right]\hat{P}_{A}\exp\left[\frac{i}{2}\lambda\hat{P}_{A}\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\left(\hat{b}^{\dagger}-\hat{b}\right)\right]\\
+ & =\varepsilon_{D}\hat{P}_{D}+\varepsilon_{A}\hat{P}_{A}\\
+ & =\hat{H}_{e}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The polaron transform leaves an operator 
+\begin_inset Formula $\alpha\hat{P}_{D}+\beta\hat{P}_{A}$
+\end_inset
+
+ invariant
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Next, transform 
+\begin_inset Formula $\hat{H}_{o}$
+\end_inset
+
+ as 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{H}_{o}\hat{U}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{U}^{\dagger}\hat{H}_{o}\hat{U} & =\hat{U}^{\dagger}\left(-\frac{\delta}{2}\hat{\sigma}_{x}-\frac{\omega_{z}}{2}\hat{\sigma}_{z}\right)\hat{U}\\
+ & =\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(-\hat{b}^{\dagger}+\hat{b}\right)\right]\exp\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\\
+ & \quad\times\left(-\frac{\delta}{2}\hat{\sigma}_{x}-\frac{\omega_{z}}{2}\hat{\sigma}_{z}\right)\exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)\left(\hat{b}^{\dagger}-\hat{b}\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 
+\begin_inset Formula $\hat{\sigma}_{x}\exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{\sigma}_{x} & \exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\\
+ & =\hat{\sigma}_{x}\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]^{k}\right)\\
+ & =\sum_{k=0}^{\infty}\frac{1}{k!}\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\right]^{k}\hat{\sigma}_{x}\left(\hat{\sigma}_{y}\right)^{k}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Now, evaluate 
+\begin_inset Formula $\hat{\sigma}_{x}\left(\hat{\sigma}_{y}\right)^{k}$
+\end_inset
+
+, starting with the identity
+\begin_inset Formula $\hat{\sigma}_{x}\hat{\sigma}_{y}=-\hat{\sigma}_{y}\hat{\sigma}_{x}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\hat{\sigma}_{x}\left(\hat{\sigma}_{y}\right)^{k} & =\left(-1\right)\left(\hat{\sigma}_{y}\hat{\sigma}_{x}\right)\left(\hat{\sigma}_{y}\right)^{k-2}\\
+ & =\left(-1\right)^{2}\left(\hat{\sigma}_{y}\right)^{2}\hat{\sigma}_{x}\left(\hat{\sigma}_{y}\right)^{k-2}=\cdots\\
+ & =\left(-1\right)^{k}\left(\hat{\sigma}_{y}\right)^{k}\hat{\sigma}_{x}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Thus,
+\begin_inset Formula 
+\begin{align*}
+\hat{\sigma}_{x} & \exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\\
+ & =\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]^{k}\right)\hat{\sigma}_{x}\\
+ & =\exp\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\hat{\sigma}_{x}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similarly, consider 
+\begin_inset Formula $\hat{\sigma}_{z}\exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use 
+\begin_inset Formula $\hat{\sigma}_{z}\hat{\sigma}_{y}=-i\hat{\sigma}_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\sigma}_{y}\hat{\sigma}_{z}=i\hat{\sigma}_{x}$
+\end_inset
+
+ to write
+\begin_inset Formula 
+\[
+\hat{\sigma}_{z}\hat{\sigma}_{y}=-\hat{\sigma}_{y}\hat{\sigma}_{z}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+\hat{\sigma}_{z}\hat{\sigma}_{y}^{k}=\left(-1\right)\hat{\sigma}_{y}\hat{\sigma}_{z}\hat{\sigma}_{y}^{k-1}=\left(-1\right)^{2}\hat{\sigma}_{y}^{2}\hat{\sigma}_{z}\hat{\sigma}_{y}^{k-2}=\cdots=\left(-1\right)^{k}\hat{\sigma}_{y}^{k}\hat{\sigma}_{z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Therefore
+\begin_inset Formula 
+\begin{align*}
+\hat{\sigma}_{z} & \exp\left[-\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\\
+ & =\left(\sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]^{k}\right)\hat{\sigma}_{z}\\
+ & =\exp\left[\frac{i}{2}\left(\lambda^{\prime}\hat{P}_{D}-\lambda\hat{P}_{A}\right)\hat{\sigma}_{y}\right]\hat{\sigma}_{z}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Section
+Dynamics of Open Systems
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\mathcal{H}_{S}$
+\end_inset
+
+ be the Hilbert space of the system 
+\begin_inset Formula $S$
+\end_inset
+
+; 
+\begin_inset Formula $\mathcal{H}_{B}$
+\end_inset
+
+ be the Hilbert space of the environment 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Total Hilbert space: 
+\begin_inset Formula $\mathcal{H}=\mathcal{H}_{S}\otimes\mathcal{H}_{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Total Hamiltonian
+\begin_inset Formula 
+\[
+\hat{H}\left(t\right)=\hat{H}_{S}\otimes\hat{I}_{B}+\hat{I}_{S}\otimes\hat{H}_{B}+\hat{H}_{I}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We are concerned with the time evolution of 
+\begin_inset Formula $S$
+\end_inset
+
+, so we get a reduced density matrix for the system by tracing over the
+ degrees of freedom of the environment:
+\begin_inset Formula 
+\[
+\hat{\rho}_{S}\left(t\right)=\mbox{tr}_{B}\,\left\{ \hat{U}\left(t,t_{0}\right)\hat{\rho}\left(t_{0}\right)\hat{U}^{\dagger}\left(t,t_{0}\right)\right\} 
+\]
+
+\end_inset
+
+or, equivalently,
+\begin_inset Formula 
+\[
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right)=-\frac{i}{\hbar}\text{tr}\,\left[\hat{H}\left(t\right),\hat{\rho}\left(t\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Quantum Dynamical Semigroups
+\end_layout
+
+\begin_layout Itemize
+Dynamical maps
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Prepare the initial state
+\begin_inset Formula 
+\[
+\hat{\rho}\left(0\right)=\hat{\rho}_{S}\left(0\right)\otimes\hat{\rho}_{B}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Initial system state 
+\begin_inset Formula $\hat{\rho}_{S}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Environment state 
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{V}\left(t\right)$
+\end_inset
+
+ be a transformation descrbing the change of the reduced system at time
+ 
+\begin_inset Formula $t=0$
+\end_inset
+
+ to some time 
+\begin_inset Formula $t>0$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}_{S}\left(0\right)\mapsto\hat{\rho}_{S}\left(t\right)=\hat{V}\left(t\right)\hat{\rho}_{S}\left(0\right)\equiv\text{tr}_{B}\,\left\{ \hat{U}\left(t,0\right)\hat{\rho}_{S}\left(0\right)\otimes\hat{\rho}_{B}\hat{U}^{\dagger}\left(t,0\right)\right\} \label{eq:DynamicalMap}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+ be constant
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Equation(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DynamicalMap"
+
+\end_inset
+
+) is a dynamical map that describes the change of the open system, mapping
+ the space 
+\begin_inset Formula $S\left(\mathcal{H}_{S}\right)$
+\end_inset
+
+ to itself: 
+\begin_inset Formula $S\left(\mathcal{H}_{S}\right)\rightarrow S\left(\mathcal{H}_{S}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dynamical maps can be characterized using only operators acting on 
+\begin_inset Formula $\mathcal{H}_{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define transition operators
+\begin_inset Formula 
+\[
+\hat{P}_{jk}\equiv\ket{j}\bra{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The density matrix 
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+ has spectral decomposition
+\begin_inset Formula 
+\[
+\hat{\rho}_{B}=\sum_{\alpha}\lambda_{\alpha}\hat{P}_{\alpha}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left\{ \ket{\alpha}\right\} $
+\end_inset
+
+ form an orthonormal basis for 
+\begin_inset Formula $\mathcal{H}_{B}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{\alpha}$
+\end_inset
+
+ are non-negative real numbers satisfying 
+\begin_inset Formula $\sum_{\alpha}\lambda_{\alpha}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+They dynamical map may be written in the form
+\begin_inset Formula 
+\begin{align}
+\hat{V}\left(t\right)\hat{\rho}_{S}\left(0\right) & \equiv\text{tr}_{B}\,\left\{ \hat{U}\left(t,0\right)\hat{\rho}_{S}\left(0\right)\otimes\hat{\rho}_{B}\hat{U}^{\dagger}\left(t,0\right)\right\} \nonumber \\
+ & =\sum_{\alpha}\Braket{\alpha|\hat{U}\left(t,0\right)\hat{\rho}_{S}\left(0\right)\otimes\hat{\rho}_{B}\hat{U}^{\dagger}\left(t,0\right)|\alpha}\nonumber \\
+ & =\sum_{\alpha}\Braket{\alpha|\hat{U}\left(t,0\right)\hat{\rho}_{S}\left(0\right)\left(\sum_{\beta}\lambda_{\beta}\ket{\beta}\bra{\beta}\right)\hat{U}^{\dagger}\left(t,0\right)|\alpha}\nonumber \\
+ & =\sum_{\alpha,\beta}\left(\sqrt{\lambda_{\beta}}\Braket{\alpha|\hat{U}\left(t,0\right)|\beta}\right)\hat{\rho}_{S}\left(0\right)\left(\sqrt{\lambda_{\beta}}\Braket{\beta|\hat{U}^{\dagger}\left(t,0\right)|\alpha}\right)\nonumber \\
+ & =\sum_{\alpha,\beta}\hat{W}_{\alpha\beta}\hat{\rho}_{S}\left(0\right)\hat{W}_{\alpha\beta}^{\dagger}\label{eq:DynamicalMapKrausLikeForm}
+\end{align}
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\hat{W}_{\alpha\beta}\equiv\sqrt{\lambda_{\beta}}\Braket{\alpha|\hat{U}\left(t,0\right)|\beta}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now:
+\begin_inset Formula 
+\begin{align*}
+\sum_{\alpha,\beta}\hat{W}_{\alpha\beta}^{\dagger}\hat{W}_{\alpha\beta} & =\sum_{\alpha,\beta}\Braket{\beta|\hat{U}^{\dagger}\left(t,0\right)|\alpha}\Braket{\alpha|\hat{U}\left(t,0\right)|\beta}\\
+ & =\sum_{\beta}\Bra{\beta}\hat{U}^{\dagger}\left(t,0\right)\left(\sum_{\alpha}\ket{\alpha}\bra{\alpha}\right)\hat{U}\left(t,0\right)\Ket{\beta}\\
+ & =\sum_{\beta}\Bra{\beta}\hat{U}^{\dagger}\left(t,0\right)\hat{U}\left(t,0\right)\Ket{\beta}=\sum_{\beta}\Bra{\beta}\Ket{\beta}=\hat{I}_{S}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus:
+\begin_inset Formula 
+\[
+\mbox{tr}_{S}\,\left\{ \hat{V}\left(t\right)\hat{\rho}_{S}\left(0\right)\right\} =\mbox{tr}_{S}\,\left(\sum_{\alpha,\beta}\hat{W}_{\alpha\beta}^{\dagger}\hat{W}_{\alpha\beta}\hat{\rho}_{S}\left(0\right)\right)=\mbox{tr}_{S}\,\left(\hat{\rho}_{S}\left(0\right)\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The dynamical map 
+\begin_inset Formula $\hat{V}\left(t\right)$
+\end_inset
+
+ is:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Convex-linear
+\end_layout
+
+\begin_layout Itemize
+completely positive
+\end_layout
+
+\begin_layout Itemize
+trace-preserving
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+If we let 
+\begin_inset Formula $t$
+\end_inset
+
+ vary, we get a one-parameter family 
+\begin_inset Formula $\left\{ V\left(t\right)|t\geq0\right\} $
+\end_inset
+
+ of dynamical maps with 
+\begin_inset Formula $V\left(0\right)=\hat{I}_{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the characteristic time scales over which the reservoir correlation functions
+ decay are smaller than the characteristic time scale of system evolution,
+ we can neglect memory effects in the system
+\end_layout
+
+\begin_layout Itemize
+Semi-group property
+\begin_inset Formula 
+\begin{equation}
+V\left(t_{1}\right)V\left(t_{2}\right)=V\left(t_{1}+t_{2}\right),\quad t_{1},t_{2}\geq0\label{eq:SemigroupProperty}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+The Markovian Master Equation
+\end_layout
+
+\begin_layout Itemize
+For a quantum dynamical semigroup, there is a linear map 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+, the generator of the semigroup, which allows us to represent the semigroup
+ in exponential form
+\begin_inset Formula 
+\begin{equation}
+\hat{V}\left(t\right)=\exp\left(\mathcal{L}t\right)\label{eq:SemigroupGenerator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now take the derivative of the dynamical map (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DynamicalMap"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align}
+\frac{d}{dt}\left(\hat{\rho}_{S}\left(t\right)\right) & =\frac{d}{dt}\left(\hat{V}\left(t\right)\hat{\rho}_{S}\left(0\right)\right)=\frac{d}{dt}\left(\exp\left(\mathcal{L}t\right)\hat{\rho}_{S}\left(0\right)\right)\nonumber \\
+ & =\mathcal{L}\exp\left(\mathcal{L}t\right)\hat{\rho}_{S}\left(0\right)=\mathcal{L}\hat{\rho}_{S}\left(t\right)\label{eq:SemiGroupDifferential}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ is called a superoperator and is a generalization of the Liouville super-operat
+or 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Construct the most general form of 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In a finite-dimensional Hilbert space 
+\begin_inset Formula $\mathcal{H}_{S}$
+\end_inset
+
+ of dimension 
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Liouville space is a complex space of dimension 
+\begin_inset Formula $N^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Choose orthonormal operators 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+, with 
+\begin_inset Formula $i\in\left\{ 1,2,\ldots,N^{2}\right\} $
+\end_inset
+
+ satisfying
+\begin_inset Formula 
+\[
+\left(F_{i},F_{j}\right)\equiv\text{tr}_{S}\,\left\{ F_{i}^{\dagger}F_{j}\right\} =\delta_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One operator, 
+\begin_inset Formula $F_{N^{2}}$
+\end_inset
+
+ is chosen to be proportional to the identity
+\begin_inset Formula 
+\[
+F_{N^{2}}=\sqrt{\frac{1}{N}}\hat{I}_{S}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The remaining 
+\begin_inset Formula $N^{2}-1$
+\end_inset
+
+ operators are traceless
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Formula $\left\{ F_{i}\right\} $
+\end_inset
+
+ form a complete basis for the Liouville space
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+An operator 
+\begin_inset Formula $W_{\alpha\beta}\left(t\right)$
+\end_inset
+
+ may be decomposed as
+\begin_inset Formula 
+\[
+W_{\alpha\beta}\left(t\right)=\sum_{i=1}^{N^{2}}F_{i}\left(F_{i},W_{\alpha\beta}\left(t\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Write the dynamical map (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DynamicalMap"
+
+\end_inset
+
+) as
+\begin_inset Formula 
+\begin{align*}
+\hat{\rho}_{S}\left(t\right) & =\sum_{\alpha,\beta}\hat{W}_{\alpha\beta}\hat{\rho}_{S}\left(0\right)\hat{W}_{\alpha\beta}^{\dagger}\\
+ & =\sum_{\alpha,\beta}\left(\sum_{i=1}^{N^{2}}F_{i}\left(F_{i},W_{\alpha\beta}\left(t\right)\right)\right)\hat{\rho}_{S}\left(0\right)\left(\sum_{j=1}^{N^{2}}F_{j}\left(F_{j},W_{\alpha\beta}\left(t\right)\right)^{\ast}\right)\\
+ & =\sum_{i,j=1}^{N^{2}}\left(\sum_{\alpha,\beta}\left(F_{i},W_{\alpha\beta}\left(t\right)\right)\left(F_{j},W_{\alpha\beta}\left(t\right)\right)^{\ast}\right)F_{i}\hat{\rho}_{S}\left(0\right)F_{j}\\
+ & =\sum_{i,j=1}^{N^{2}}c_{i,j}F_{i}\hat{\rho}_{S}\left(0\right)F_{j}
+\end{align*}
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+c_{ij}=\sum_{\alpha,\beta}\left(F_{i},W_{\alpha\beta}\left(t\right)\right)\left(F_{j},W_{\alpha\beta}\left(t\right)\right)^{\ast}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The matrix 
+\begin_inset Formula $c=\left(c_{ij}\right)$
+\end_inset
+
+ is Hermitian adjoint
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For some complex, vector 
+\begin_inset Formula $v\in\mathbb{C}^{N^{2}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\sum_{ij}c_{ij}v_{i}^{\ast}v_{j} & =\sum_{ij}\left(\sum_{\alpha,\beta}\left(F_{i},W_{\alpha\beta}\left(t\right)\right)\left(F_{j},W_{\alpha\beta}\left(t\right)\right)^{\ast}\right)v_{i}^{\ast}v_{j}\\
+ & =\sum_{\alpha,\beta}\sum_{ij}\left(\hat{F}_{i},W_{\alpha\beta}\left(t\right)\right)\left(\hat{F}_{j},W_{\alpha\beta}\left(t\right)\right)^{\ast}v_{i}^{\ast}v_{j}\\
+ & =\sum_{\alpha,\beta}\sum_{i}\left|\left(v_{i}\hat{F}_{i},W_{\alpha\beta}\left(t\right)\right)\right|^{2}\geq0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The book says that this proves that 
+\begin_inset Formula $c\geq0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since
+\begin_inset Formula 
+\[
+V\left(t\right)=\sum_{k=0}^{\infty}\frac{1}{k!}\mathcal{L}^{k}t^{k}=\hat{I}_{S}+\mathcal{L}t+\frac{1}{2}\mathcal{L}^{2}t^{2}+\cdots\frac{1}{k!}\mathcal{L}^{k}t^{k}+\cdots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then, for 
+\begin_inset Formula $t=\epsilon$
+\end_inset
+
+ for some small 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+, we have to first order
+\begin_inset Formula 
+\[
+V\left(\epsilon\right)\simeq\hat{I}_{S}+\mathcal{L}\epsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Apply this to 
+\begin_inset Formula $\hat{\rho}_{S}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+V\left(\epsilon\right)\hat{\rho}_{S}=\hat{I}_{S}\hat{\rho}_{S}+\mathcal{L}\epsilon\hat{\rho}_{S}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\hat{\rho}_{S} & =\lim_{\epsilon\rightarrow0}\frac{1}{\epsilon}\left(V\left(\epsilon\right)\hat{\rho}_{S}-\hat{\rho}_{S}\right)\\
+ & =\lim_{\epsilon\rightarrow0}\Bigg\{\frac{1}{N}\frac{c_{N^{2}N^{2}}\left(\epsilon\right)-N}{\epsilon}\hat{\rho}_{S}+\frac{1}{\sqrt{N}}\sum_{i=1}^{N^{2}-1}\left(\frac{c_{iN^{2}}\left(\epsilon\right)}{\epsilon}\hat{F}_{i}\hat{\rho}_{S}+\frac{c_{N^{2}i}\left(\epsilon\right)}{\epsilon}\hat{\rho}_{S}\hat{F}_{i}^{\dagger}\right)\\
+ & \qquad+\sum_{i,j=1}^{N^{2}-1}\frac{c_{ij}\left(\epsilon\right)}{\epsilon}\hat{F}_{i}\hat{\rho}_{S}\hat{F}_{j}^{\dagger}\Bigg\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define coefficients
+\begin_inset Formula 
+\begin{align*}
+a_{N^{2}N^{2}} & =\lim_{\epsilon\rightarrow0}\frac{c_{N^{2}N^{2}}\left(\epsilon\right)-N}{\epsilon}\\
+a_{iN^{2}} & =\lim_{\epsilon\rightarrow0}\frac{c_{iN^{2}}\left(\epsilon\right)}{\epsilon},\quad i=1,\ldots,N^{2}-1,\\
+a_{ij} & =\lim_{\epsilon\rightarrow0}\frac{c_{ij}\left(\epsilon\right)}{\epsilon},\quad i,j=1,\ldots,N^{2}-1
+\end{align*}
+
+\end_inset
+
+and the quantities
+\begin_inset Formula 
+\[
+\hat{F}=\sum_{i=1}^{N^{2}-1}a_{iN^{2}}\hat{F}_{i}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+G=\frac{1}{2N}a_{N^{2}N^{2}}I_{S}+\frac{1}{2}\left(\hat{F}^{\dagger}+\hat{F}\right)
+\]
+
+\end_inset
+
+ as well as the Hermitian operator
+\begin_inset Formula 
+\[
+\hat{H}=\frac{1}{2i}\left(\hat{F}^{\dagger}-\hat{F}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Write 
+\begin_inset Formula $\mathcal{L}\hat{\rho}_{S}$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{G}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{F}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathcal{L}\hat{\rho}_{S}=-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}_{S}\right]+\left\{ G,\hat{\rho}_{S}\right\} +\sum_{i,j=1}^{N^{2}-1}a_{ij}F_{i}\hat{\rho}_{S}F_{j}^{\dagger}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Since the semi-group is trace preserving, we expect that
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\left(\text{tr}\:\hat{\rho}_{S}\right) & =\text{tr}\,\left(\frac{d}{dt}\hat{\rho}_{S}\right)=\text{tr}\,\left(\mathcal{L}\hat{\rho}_{S}\right)\\
+ & =\text{tr}_{S}\left\{ \left(2G+\sum_{i,j=1}^{N^{2}-1}a_{ij}F_{j}^{\dagger}F_{i}\right)\hat{\rho}_{S}\right\} \\
+ & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For this to hold for arbitrary 
+\begin_inset Formula $\hat{\rho}_{S}$
+\end_inset
+
+, we require
+\begin_inset Formula 
+\[
+2G+\sum_{i,j=1}^{N^{2}-1}a_{ij}F_{j}^{\dagger}F_{i}=0
+\]
+
+\end_inset
+
+which leads to
+\begin_inset Formula 
+\[
+G=-\frac{1}{2}\sum_{i,j=1}^{N^{2}-1}a_{ij}F_{j}^{\dagger}F_{i}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+\mathcal{L}\hat{\rho}_{S}=-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}_{S}\right]+\sum_{i,j=1}^{N^{2}-1}a_{ij}\left(F_{i}\hat{\rho}_{S}F_{j}^{\dagger}-\frac{1}{2}\left\{ F_{j}^{\dagger}F_{i},\hat{\rho}_{S}\right\} \right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the 
+\series bold
+first standard form
+\series default
+ of the generator
+\end_layout
+
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $a=\left(a_{ij}\right)$
+\end_inset
+
+ is a Hermitian and positive matrix
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since the coefficeint matrix 
+\begin_inset Formula $a$
+\end_inset
+
+ is positive, it may be diagonalized using an appropriate unitary transformation
+:
+\begin_inset Formula 
+\[
+uau^{\dagger}=\left[\begin{array}{cccc}
+\gamma_{1}\\
+ & \gamma_{2}\\
+ &  & \ddots\\
+ &  &  & \gamma_{N^{2}-1}
+\end{array}\right]
+\]
+
+\end_inset
+
+with non-negative eigenvalues 
+\begin_inset Formula $\left\{ \gamma_{i}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define new operators 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+F_{i}=\sum_{k=1}^{N^{2}-1}u_{ki}A_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The diagonal form of the generator is written as
+\begin_inset Formula 
+\[
+\mathcal{L}\hat{\rho}_{S}=-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}_{S}\right]+\sum_{k=1}^{N^{2}-1}\gamma_{k}\left(A_{k}\hat{\rho}_{S}A_{k}^{\dagger}-\frac{1}{2}\left\{ A_{k}^{\dagger}A_{k},\hat{\rho}_{S}\right\} \right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the Lindblad equation
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Quantum dynamical semigroups in the Heisenberg picture
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Characterize dynamical maps in the Heisenberg picture
+\begin_inset Formula 
+\begin{equation}
+\text{tr}_{S}\,\left\{ A\left(V\left(t\right)\hat{\rho}_{S}\right)\right\} =\text{tr}_{S}\,\left\{ \left(V^{\dagger}\left(t\right)A\right)\hat{\rho}_{S}\right\} \label{eq:DynamicalMapHeisenbergPic}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The one-parameter family of dynamical maps 
+\begin_inset Formula $V\left(t\right)$
+\end_inset
+
+must be continuous
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Demand ultraweak continuity:
+\begin_inset Formula 
+\[
+\lim_{\epsilon\rightarrow0}\text{tr}_{S}\left\{ \left(V^{\dagger}\left(\epsilon\right)A-A\right)\hat{\rho}_{S}\right\} =0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dynamical semigroups always are contracting:
+\begin_inset Formula 
+\[
+\left\Vert V^{\dagger}\left(\epsilon\right)A\right\Vert _{1}\leq\left\Vert A\right\Vert _{1}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left\Vert A\right\Vert _{1}=\text{tr}\,\left|A\right|$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The Dissipator 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathcal{D}\left(\hat{\rho}_{S}\right)=\sum_{k=1}^{N^{2}-1}\gamma_{k}\left(A_{k}\hat{\rho}_{S}A_{k}^{\dagger}-\frac{1}{2}\left\{ A_{k}^{\dagger}A_{k},\hat{\rho}_{S}\right\} \right)
+\]
+
+\end_inset
+
+so that the Lindblad equation may be written
+\begin_inset Formula 
+\[
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right)=-\frac{i}{\hbar}\left[\hat{H},\hat{\rho}_{S}\left(t\right)\right]+\mathcal{D}\left(\hat{\rho}_{S}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ is not necessarily the free Hamiltonian of the system 
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ may contain additional terms due to the coupling of the system with its
+ environment
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The generator 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ does not uniquely dtermine 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+ and the operators 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The generator 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ is invariant under the following transformations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Unitary transformations of the Lindblad operators
+\begin_inset Formula 
+\[
+\sqrt{\gamma_{i}}A_{i}\rightarrow\sqrt{\gamma_{i}^{\prime}}A_{i}^{\prime}=\sum_{j}u_{ij}\sqrt{\gamma_{j}}A_{j}
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $u=\left(u_{ij}\right)$
+\end_inset
+
+ is a unitary matrix
+\end_layout
+
+\begin_layout Itemize
+Inhomogeneous transformations
+\begin_inset Formula 
+\begin{align*}
+A_{i}\longrightarrow A_{i}^{\prime} & =A_{i}+a_{i},\\
+H\longrightarrow H^{\prime} & =H+\frac{1}{2i}\sum_{j}\gamma_{i}\left(a_{j}^{\ast}A_{j}-a_{j}A_{j}^{\dagger}\right)+b
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $a_{i}\in\mathbb{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in\mathbb{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This means it is always possible to choose traceless 
+\begin_inset Formula $\left\{ A_{i}\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Time-dependent Lindblad operators may be appropriate under external time-depende
+nt fields affecting the system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A generalized version of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DynamicalMap"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right)=\mathcal{L}\left(t\right)\hat{\rho}_{S}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define the time-dependent propagator 
+\begin_inset Formula $V\left(t,t_{0}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+V\left(t,t_{0}\right)=T_{\leftarrow}\exp\left(\int_{t_{0}}^{t}ds\,\mathcal{L}\left(s\right)\right)
+\]
+
+\end_inset
+
+which satisfies
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}V\left(t,t_{0}\right)=\mathcal{L}\left(t\right)V\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Instead of the semigroup property of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SemigroupProperty"
+
+\end_inset
+
+), we have
+\begin_inset Formula 
+\[
+V\left(t,t_{1}\right)V\left(t_{1},t_{0}\right)=V\left(t,t_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The adjoint master equation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define for a Schrödinger-picture operator 
+\begin_inset Formula $A$
+\end_inset
+
+ the Heisenberg operator 
+\begin_inset Formula $A_{H}\left(t\right)$
+\end_inset
+
+ using (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DynamicalMapHeisenbergPic"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+\text{tr}_{S}\,\left\{ A\left(V\left(t\right)\hat{\rho}_{S}\right)\right\} =\text{tr}_{S}\,\left\{ \left(V^{\dagger}\left(t\right)A\right)\hat{\rho}_{S}\right\} =\text{tr}_{S}\,\left\{ A_{H}\left(t\right)\hat{\rho}_{S}\right\} 
+\]
+
+\end_inset
+
+with the adjoint propagator
+\begin_inset Formula 
+\[
+V^{\dagger}\left(t,t_{0}\right)=T_{\rightarrow}\exp\left(\int_{t_{0}}^{t}ds\,\mathcal{L}^{\dagger}\left(s\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The adjoint generator 
+\begin_inset Formula $\mathcal{L}^{\dagger}$
+\end_inset
+
+ is defined by
+\begin_inset Formula 
+\[
+\text{tr}_{S}\left\{ A\mathcal{L}\left(t\right)\hat{\rho}_{S}\right\} =\text{tr}_{S}\left\{ \left(\mathcal{L}^{\dagger}\left(t\right)A\right)\hat{\rho}_{S}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The adjoint propagator 
+\begin_inset Formula $V^{\dagger}\left(t,t_{0}\right)$
+\end_inset
+
+ satisfies
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}V^{\dagger}\left(t,t_{0}\right)=V^{\dagger}\left(t,t_{0}\right)\mathcal{L}^{\dagger}\left(t\right)
+\]
+
+\end_inset
+
+and describes the evolution of operators in the Heisenberg picture
+\begin_inset Formula 
+\[
+A_{H}\left(t\right)=V^{\dagger}\left(t,0\right)A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus, the equation of motion for the Heisenberg operator 
+\begin_inset Formula $\hat{A}_{H}\left(t\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt} & A_{H}\left(t\right)\\
+ & =\mathcal{L}^{\dagger}A_{H}\left(t\right)\\
+ & =\frac{i}{\hbar}\left[\hat{H},A_{H}\left(t\right)\right]+\sum_{k}\gamma_{k}\left(A_{k}^{\dagger}A_{H}\left(t\right)A_{k}-\frac{1}{2}\left\{ A_{H}\left(t\right),A_{k}^{\dagger}A_{k}\right\} \right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Multi-time correlation functions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two-time correlation functions
+\begin_inset Formula 
+\[
+g\left(t,s\right)=\Braket{B\left(t\right),C\left(s\right)}=\text{tr}_{S}\left\{ B_{H}\left(t\right)C_{H}\left(s\right)\hat{\rho}_{S}\left(0\right)\right\} 
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $t>s\geq0$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is equvalent to the Schrödinger picture expression:
+\begin_inset Formula 
+\[
+g\left(t,s\right)=\mbox{tr}_{S}\left\{ BV\left(t,s\right)CV\left(s,0\right)\hat{\rho}_{S}\left(0\right)\right\} ,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Convention: superoperators act on anything rightward of them.
+\end_layout
+
+\begin_layout Itemize
+The process here is:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Propagate 
+\begin_inset Formula $\hat{\rho}_{S}\left(0\right)$
+\end_inset
+
+ to 
+\begin_inset Formula $\hat{\rho}_{S}\left(s\right)$
+\end_inset
+
+ and then measure with 
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Propagate the measured state to 
+\begin_inset Formula $\hat{\rho}_{S}\left(t\right)$
+\end_inset
+
+ and then measure with 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+General form for a multi-time correlation function:
+\begin_inset Formula 
+\begin{align*}
+g & \left(t_{1},t_{2},\ldots,t_{n};s_{1},s_{2},\ldots,s_{m}\right)\\
+ & \equiv\Braket{B_{1}\left(s_{1}\right)B_{2}\left(s_{2}\right)\cdots B_{m}\left(s_{m}\right)C_{n}\left(t_{n}\right)\cdots C_{2}\left(t_{2}\right)C_{1}\left(t_{1}\right)}\\
+ & =\text{tr}_{S}\,\left\{ C_{n}\left(t_{n}\right)\cdots C_{2}\left(t_{2}\right)C_{1}\left(t_{1}\right)\hat{\rho}_{S}\left(0\right)B_{1}\left(s_{1}\right)\cdots B_{2}\left(s_{2}\right)B_{m}\left(s_{m}\right)\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, the 
+\begin_inset Formula $B_{j}\left(s_{j}\right)$
+\end_inset
+
+, with 
+\begin_inset Formula $j\in\left\{ 1,2,\ldots,m\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $C_{i}\left(s_{i}\right)$
+\end_inset
+
+, with 
+\begin_inset Formula $i\in\left\{ 1,2,\ldots,n\right\} $
+\end_inset
+
+ are arbitrary Heisenberg operators, and the 
+\begin_inset Formula $s_{j}$
+\end_inset
+
+and 
+\begin_inset Formula $t_{i}$
+\end_inset
+
+ are ordered such that
+\begin_inset Formula 
+\[
+t_{n}>t_{n-1}>\cdots>t_{2}>t_{1}\geq0\quad\text{and}\quad s_{m}>s_{m-1}>\cdots>s_{2}>s_{1}\geq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Order the time events as
+\begin_inset Formula 
+\[
+r_{q}>r_{q-1}>\cdots>r_{1}\geq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since it is possible for 
+\begin_inset Formula $t_{i}=s_{j}$
+\end_inset
+
+ for some 
+\begin_inset Formula $i,j$
+\end_inset
+
+ , there could be fewer than 
+\begin_inset Formula $m+n$
+\end_inset
+
+ disticnt times.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Define super-operator 
+\begin_inset Formula $\mathcal{F}_{l}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathcal{F}_{l}\hat{\rho}=\begin{cases}
+C_{i}\hat{\rho}, & r_{l}=t_{i}\neq s_{j}\quad\text{for some }i\,\text{and all }j,\\
+\hat{\rho}B_{j}, & r_{l}=s_{j}\neq t_{i}\quad\text{for some }j\,\text{and all }i,\\
+C_{i}\hat{\rho}B_{j}, & r_{l}=t_{i}=s_{j}\quad\text{for some }i\,\text{and }j
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This allows for
+\begin_inset Formula 
+\begin{align*}
+g & \left(t_{1},t_{2},\ldots,t_{n};s_{1},s_{2},\ldots,s_{m}\right)\\
+ & =\text{tr}_{S}\,\left\{ \mathcal{F}_{q}V\left(r_{q},r_{q-1}\right)\mathcal{F}_{q-1}V\left(r_{q},r_{q-2}\right)\cdots\mathcal{F}_{1}V\left(r_{1},0\right)\hat{\rho}_{S}\left(0\right)\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Dynamics of correlation functions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For correlation function 
+\begin_inset Formula $\Braket{B_{i}\left(t\right)}$
+\end_inset
+
+, we have the 
+\series bold
+quantum regression theorem
+\series default
+:
+\begin_inset Formula 
+\[
+\frac{d}{d\tau}\braket{B_{i}\left(t+\tau,t\right)B_{l}\left(t\right)}=\sum_{j}G_{ij}\Braket{B_{j}\left(t+\tau\right)B_{l}\left(t\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Proof:
+\begin_inset Formula 
+\[
+\frac{d}{d\tau}\braket{B_{i}\left(t+\tau,t\right)B_{l}\left(t\right)}=\text{tr}_{S}\left\{ \left(\mathcal{L}^{\dagger}B_{l}\left(t\right)\right)\hat{\rho}_{S}\left(t\right)\right\} =\text{tr}_{S}\left\{ \left(\sum_{j}G_{ij}B_{j}\right)\hat{\rho}_{S}\left(t\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For arbitrary 
+\begin_inset Formula $\hat{\rho}_{S}\left(t\right)$
+\end_inset
+
+, this leads to
+\begin_inset Formula 
+\[
+\mathcal{L}^{\dagger}B_{i}=\sum_{j}G_{ij}B_{j}
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{d\tau}\braket{B_{i}\left(t+\tau,t\right)B_{l}\left(t\right)} & =\text{tr}_{S}\left\{ \left(\mathcal{L}^{\dagger}B_{i}\left(t\right)\right)V\left(t+\tau,t\right)B_{l}\hat{\rho}_{S}\left(t\right)\right\} \\
+ & =\sum_{j}G_{ij}\Braket{B_{j}\left(t+\tau\right)B_{l}\left(t\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This result will allow us to determine explicit expressions for correlation
+ functions once a solution is knkown for mean values.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Irreversiblilty and entropy production
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Relative entropy
+\begin_inset Formula 
+\[
+S\left(\hat{\rho}||\hat{\sigma}\right)\equiv\text{tr}\,\left\{ \hat{\rho}\ln\hat{\rho}\right\} -\text{tr}\,\left\{ \hat{\rho}\ln\hat{\sigma}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $S\left(\hat{\rho}||\hat{\rho}_{0}\right)$
+\end_inset
+
+ be the relative entropy between two states 
+\begin_inset Formula $\hat{\rho}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\rho}_{0}$
+\end_inset
+
+ of the system 
+\begin_inset Formula $S$
+\end_inset
+
+ described by 
+\begin_inset Formula $V\left(t\right)$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+S\left(\hat{\rho}||\hat{\rho}_{0}\right) & =S\left(\mbox{tr}_{B}\left\{ \hat{U}\left(t,0\right)\hat{\rho}\otimes\hat{\rho}_{B}\hat{U}^{\dagger}\left(t,0\right)\right\} ||\left\{ \hat{U}\left(t,0\right)\hat{\rho}_{0}\otimes\hat{\rho}_{B}\hat{U}^{\dagger}\left(t,0\right)\right\} \right)\\
+ & \leq S\left(\hat{U}\left(t,0\right)\hat{\rho}\otimes\hat{\rho}_{B}\hat{U}^{\dagger}\left(t,0\right)||\hat{U}\left(t,0\right)\hat{\rho}_{0}\otimes\hat{\rho}_{B}\hat{U}^{\dagger}\left(t,0\right)\right)\\
+ & =S\left(\hat{\rho}\otimes\hat{\rho}_{B}||\hat{\rho}_{0}\otimes\hat{\rho}_{B}\right)\\
+ & =S\left(\hat{\rho}||\hat{\rho}_{0}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{\rho}_{0}$
+\end_inset
+
+ be a stationary state of 
+\begin_inset Formula $S$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+V\left(t\right)\hat{\rho}_{0}=\hat{\rho}_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then, a dynamical map 
+\begin_inset Formula $V\left(t\right)$
+\end_inset
+
+ decreases the relative entropy with respect to a stationary state:
+\begin_inset Formula 
+\[
+S\left(V\left(t\right)\hat{\rho}||\hat{\rho}_{0}\right)\leq S\left(\hat{\rho}||\hat{\rho}_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $V\left(t\right)=\exp\left(\mathcal{L}t\right)$
+\end_inset
+
+, then the negative time derivative of the relative entropy is positive:
+\begin_inset Formula 
+\[
+\sigma\left(\hat{\rho}\left(t\right)\right)=-\frac{d}{dt}S\left(\hat{\rho}\left(t\right)||\hat{\rho}_{0}\right)\geq0
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+\hat{\rho}\left(t\right)=V\left(t\right)\hat{\rho}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigma\left(\hat{\rho}\left(t\right)\right)$
+\end_inset
+
+ is a functional called the entropy production rate.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Microscopic Derivation of the Master Equation
+\end_layout
+
+\begin_layout Itemize
+Begin with the Hamiltonian
+\begin_inset Formula 
+\[
+\hat{H}=\hat{H}_{S}+\hat{H}_{B}+\hat{H}_{I}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider weak coupling
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The derivation of the master equation is best done in the interaction picture.
+\end_layout
+
+\begin_layout Itemize
+Start with the von Neumann equation
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\hat{\rho}\left(t\right)=-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}\left(t\right)\right]\label{eq:VonNeumann}
+\end{equation}
+
+\end_inset
+
+for the total density matrix and its integral form
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}\left(t\right)=\hat{\rho}\left(0\right)-\frac{i}{\hbar}\int_{0}^{t}ds\,\left[\hat{H}_{I}\left(s\right),\hat{\rho}\left(s\right)\right]\label{eq:VonNeumannIntegral}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Equations here are in the interaction picture
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Combine (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:VonNeumann"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:VonNeumannIntegral"
+
+\end_inset
+
+) Trace over the degrees of freedom of the reservoir
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\hat{\rho}\left(t\right) & =-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}\left(0\right)-\frac{i}{\hbar}\int_{0}^{t}ds\,\left[\hat{H}_{I}\left(s\right),\hat{\rho}\left(s\right)\right]\right]\\
+ & =-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}\left(0\right)\right]-\frac{1}{\hbar^{2}}\left[\hat{H}_{I}\left(t\right),\int_{0}^{t}ds\,\left[\hat{H}_{I}\left(s\right),\hat{\rho}\left(s\right)\right]\right]\\
+ & =-\frac{i}{\hbar}\left[\hat{H}_{I}\left(t\right),\hat{\rho}\left(0\right)\right]-\frac{1}{\hbar^{2}}\int_{0}^{t}ds\,\left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(s\right),\hat{\rho}\left(s\right)\right]\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Take the trace of this:
+\begin_inset Formula 
+\begin{align*}
+\text{tr}_{B}\left(\frac{d}{dt}\hat{\rho}\left(t\right)\right) & =\frac{d}{dt}\left(\text{tr}_{B}\hat{\rho}\left(t\right)\right)=\frac{d}{dt}\hat{\rho}_{S}\left(t\right)\\
+ & =-\frac{i}{\hbar}\cancel{\text{tr}_{B}\left\{ \left[\hat{H}_{I}\left(t\right),\hat{\rho}\left(0\right)\right]\right\} }-\frac{1}{\hbar^{2}}\int_{0}^{t}ds\,\text{tr}_{B}\,\left\{ \left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(s\right),\hat{\rho}\left(s\right)\right]\right]\right\} \\
+ & =-\frac{1}{\hbar^{2}}\int_{0}^{t}ds\,\text{tr}_{B}\,\left\{ \left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(s\right),\hat{\rho}\left(s\right)\right]\right]\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus, we have
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right)=-\frac{1}{\hbar^{2}}\int_{0}^{t}ds\,\text{tr}_{B}\,\left\{ \left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(s\right),\hat{\rho}\left(s\right)\right]\right]\right\} \label{eq:Derivative_of_System}
+\end{equation}
+
+\end_inset
+
+under the assumption that
+\begin_inset Formula 
+\begin{equation}
+\text{tr}_{B}\left\{ \left[\hat{H}_{I}\left(t\right),\hat{\rho}\left(0\right)\right]\right\} \label{eq:ZeroCommutatorAssumption}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We still have the full 
+\begin_inset Formula $S+B$
+\end_inset
+
+ density matrix 
+\begin_inset Formula $\hat{\rho}\left(s\right)$
+\end_inset
+
+ on the right-hand side of (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Derivative_of_System"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+To eliminate this, we first make the Born approximation:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Weak coupling approximation.
+ The coupling between the system and the reservoir is weak such that the
+ influence of the system on the reservoir is small.
+\end_layout
+
+\begin_layout Itemize
+The reservoir remains approximately in the initial state 
+\begin_inset Formula $\hat{\rho}_{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The total system-reservoir system 
+\begin_inset Formula $S+B$
+\end_inset
+
+ may be characterized as a product of system and reservoir matrices
+\begin_inset Formula 
+\begin{equation}
+\hat{\rho}\left(t\right)=\hat{\rho}_{S}\left(t\right)\otimes\hat{\rho}_{B}\label{eq:BornApproximation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Under the Born approximation, we have
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right)=-\frac{1}{\hbar^{2}}\int_{0}^{t}ds\,\text{tr}_{B}\,\left\{ \left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(s\right),\hat{\rho}_{S}\left(s\right)\otimes\hat{\rho}_{B}\right]\right]\right\} \label{eq:Derivative_of_System_Born_Approx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Next, we make the Markov approximation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This makes (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Derivative_of_System_Born_Approx"
+
+\end_inset
+
+) time-local, since it is assumed 
+\begin_inset Formula $\hat{\rho}\left(t\right)$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $\hat{\rho}\left(t^{\prime}\right)$
+\end_inset
+
+ for all 
+\begin_inset Formula $t^{\prime}\neq t$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right)=-\frac{1}{\hbar^{2}}\int_{0}^{t}ds\,\text{tr}_{B}\,\left\{ \left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(s\right),\hat{\rho}_{S}\left(t\right)\otimes\hat{\rho}_{B}\right]\right]\right\} \label{eq:Derivative_of_System_RedfieldEquation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is called the 
+\series bold
+Redfield equation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The Redfield equation is time-local but not a master equation since it depends
+ explicitly on the initial preparation of the reservoir
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To achieve a master equation, let 
+\begin_inset Formula $s\rightarrow t-s$
+\end_inset
+
+ so that
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right)=-\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\left\{ \left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(t-s\right),\hat{\rho}_{S}\left(t\right)\otimes\hat{\rho}_{B}\right]\right]\right\} \label{eq:Derivative_of_System_BornMarkov}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is the Born-Markov approximation, but it does not guarantee that this
+ equation defines the generator of a dynamical semigroup.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Peform a secular apprxoimation which averages over the rapidly-oscillating
+ terms of the master equation and is known as the rotating wave approximation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Write 
+\begin_inset Formula $\hat{H}_{I}$
+\end_inset
+
+ in the interaction picture in the form
+\begin_inset Formula 
+\begin{equation}
+\hat{H}_{I}=\sum_{\alpha}\hat{A}_{\alpha}\otimes\hat{B}_{\alpha}\label{eq:SecularApproximation}
+\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula 
+\[
+\hat{A}_{\alpha}=\hat{A}_{\alpha}^{\dagger}\quad\text{and}\quad\hat{B}_{\alpha}=\hat{B}_{\alpha}^{\dagger}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+To achieve (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SecularApproximation"
+
+\end_inset
+
+), we decompose the interaction-picture Hamiltonian 
+\begin_inset Formula $\hat{H}_{I}$
+\end_inset
+
+ into eigenoperators of the system 
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume 
+\begin_inset Formula $\hat{H}_{S}$
+\end_inset
+
+ has eigenvalues 
+\begin_inset Formula $\left\{ \varepsilon\right\} $
+\end_inset
+
+ and eigenvectors 
+\begin_inset Formula $\left\{ \ket{\varepsilon}\right\} $
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{H}_{S}\ket{\varepsilon}=\varepsilon\ket{\varepsilon}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define projection operators
+\begin_inset Formula 
+\[
+\hat{\Pi}\left(\varepsilon\right)=\hat{P}_{\varepsilon\varepsilon}=\ket{\varepsilon}\bra{\varepsilon}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Define operators
+\begin_inset Formula 
+\[
+\hat{A}_{\alpha}\left(\omega\right)=\sum_{\varepsilon^{\prime}-\varepsilon=\omega}\hat{\Pi}\left(\varepsilon\right)\hat{A}_{\alpha}\hat{\Pi}\left(\varepsilon^{\prime}\right),
+\]
+
+\end_inset
+
+where the sum over 
+\begin_inset Formula $\omega$
+\end_inset
+
+ includes all eigenvalue pairs 
+\begin_inset Formula $\left(\varepsilon,\varepsilon^{\prime}\right)$
+\end_inset
+
+ satisfying 
+\begin_inset Formula $\varepsilon^{\prime}-\varepsilon=\omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus, the following relations are satisfied
+\begin_inset Formula 
+\begin{align*}
+\left[\hat{H}_{S},\hat{A}_{\alpha}\left(\omega\right)\right] & =-\omega\hat{A}_{\alpha}\left(\omega\right)\\
+\left[\hat{H}_{S},\hat{A}_{\alpha}^{\dagger}\left(\omega\right)\right] & =\omega\hat{A}_{\alpha}^{\dagger}\left(\omega\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The operators 
+\begin_inset Formula $\hat{A}_{\alpha}\left(\omega\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{A}_{\alpha}^{\dagger}\left(\omega\right)$
+\end_inset
+
+ are said to be eigenoperators of 
+\begin_inset Formula $\hat{H}_{S}$
+\end_inset
+
+ belonging to frequencies 
+\begin_inset Formula $\pm\omega$
+\end_inset
+
+, respectively
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+In the interaction picture, the eigenoperators of 
+\begin_inset Formula $\hat{H}_{S}$
+\end_inset
+
+ take the form
+\begin_inset Formula 
+\begin{align*}
+e^{i\hat{H}_{S}t}\hat{A}_{\alpha}\left(\omega\right)e^{-i\hat{H}_{S}t} & =e^{-i\omega t}\hat{A}_{\alpha}\left(\omega\right),\quad\text{and}\\
+e^{i\hat{H}_{S}t}\hat{A}_{\alpha}^{\dagger}\left(\omega\right)e^{-i\hat{H}_{S}t} & =e^{+i\omega t}\hat{A}_{\alpha}^{\dagger}\left(\omega\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The following commutator evaluates to zero:
+\begin_inset Formula 
+\[
+\left[\hat{H}_{S},\hat{A}_{\alpha}^{\dagger}\left(\omega\right)\hat{A}_{\alpha}\left(\omega\right)\right]=0
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\hat{A}_{\alpha}^{\dagger}\left(\omega\right)=\hat{A}_{\alpha}\left(-\omega\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sum over all energy differences and employ the completeness relation to
+ get
+\begin_inset Formula 
+\[
+\sum_{\omega}\hat{A}_{\alpha}\left(\omega\right)=\sum_{\omega}\hat{A}_{\alpha}^{\dagger}\left(\omega\right)=\hat{A}_{\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This allows us to write the interaction Hamiltonian (in the Schrödinger
+ picture) as
+\begin_inset Formula 
+\[
+\hat{H}_{I}=\sum_{\alpha,\omega}\hat{A}_{\alpha}\left(\omega\right)\otimes B_{\alpha}=\sum_{\alpha,\omega}\hat{A}_{\alpha}^{\dagger}\left(\omega\right)\otimes B_{\alpha}^{\dagger}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus, the interaction Hamiltonian in the interaction picture is
+\begin_inset Formula 
+\begin{align}
+\hat{H}_{I}\left(t\right) & =e^{i\hat{H}_{S}t}\hat{H}_{I}e^{-i\hat{H}_{S}t}=\sum_{\alpha,\omega}e^{-i\omega t}\hat{A}_{\alpha}\left(\omega\right)\otimes B_{\alpha}\quad\text{or}\nonumber \\
+ & =\sum_{\alpha,\omega}e^{+i\omega t}\hat{A}_{\alpha}^{\dagger}\left(\omega\right)\otimes B_{\alpha}^{\dagger}\left(t\right)\label{eq:InteractionPictureInteraction}
+\end{align}
+
+\end_inset
+
+with interaction picture environment operators
+\begin_inset Formula 
+\[
+B_{\alpha}\left(t\right)=e^{i\hat{H}_{B}t}B_{\alpha}e^{-i\hat{H}_{B}t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We also find that
+\begin_inset Formula 
+\[
+\Braket{B_{\alpha}\left(t\right)}\equiv\text{tr}\,\left\{ B_{\alpha}\left(t\right)\hat{\rho}_{B}\right\} =0
+\]
+
+\end_inset
+
+which has the interpretation that the reservoir averages of 
+\begin_inset Formula $B_{\alpha}\left(t\right)$
+\end_inset
+
+ vanish
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now, expand (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Derivative_of_System_BornMarkov"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right) & =-\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\left\{ \left[\hat{H}_{I}\left(t\right),\left[\hat{H}_{I}\left(t-s\right),\hat{\rho}_{S}\left(t\right)\otimes\hat{\rho}_{B}\right]\right]\right\} \\
+ & =-\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\left\{ \hat{H}_{I}\left(t\right)\left[\hat{H}_{I}\left(t-s\right),\hat{\rho}_{S}\left(t\right)\otimes\hat{\rho}_{B}\right]-\left[\hat{H}_{I}\left(t-s\right),\hat{\rho}_{S}\left(t\right)\otimes\hat{\rho}_{B}\right]\hat{H}_{I}\left(t\right)\right\} \\
+ & =-\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\bigg\{\hat{H}_{I}\left(t\right)\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}-\hat{H}_{I}\left(t\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t-s\right)\\
+ & \quad\qquad\qquad\qquad-\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t\right)+\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t-s\right)\hat{H}_{I}\left(t\right)\bigg\}\\
+ & =\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\bigg\{\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t\right)-\hat{H}_{I}\left(t\right)\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\\
+ & \quad\qquad\qquad\qquad+\hat{H}_{I}\left(t\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t-s\right)-\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t-s\right)\hat{H}_{I}\left(t\right)\bigg\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\begin{align*}
+\left(\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t\right)\right)^{\dagger} & =\hat{H}_{I}^{\dagger}\left(t\right)\hat{\rho}_{S}^{\dagger}\left(t\right)\hat{\rho}_{B}^{\dagger}\hat{H}_{I}^{\dagger}\left(t-s\right)\\
+ & =\hat{H}_{I}\left(t\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t-s\right)
+\end{align*}
+
+\end_inset
+
+so that we can simplify our expression to
+\begin_inset Formula 
+\begin{align}
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right) & =\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\bigg\{\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t\right)-\hat{H}_{I}\left(t\right)\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\nonumber \\
+ & \quad\qquad\qquad\qquad+\text{h.c.}\bigg\}\label{eq:Derivative_of_System_with_hc_01}
+\end{align}
+
+\end_inset
+
+where 
+\begin_inset Formula $\text{h.c.}$
+\end_inset
+
+ denotes 
+\begin_inset Quotes eld
+\end_inset
+
+Hermitian conjugate
+\begin_inset Quotes erd
+\end_inset
+
+ terms
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now, insert (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:InteractionPictureInteraction"
+
+\end_inset
+
+) into (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Derivative_of_System_with_hc_01"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\hat{\rho}_{S}\left(t\right) & =\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\bigg\{\left(\sum_{\alpha,\omega}e^{-i\omega\left(t-s\right)}\hat{A}_{\alpha}\left(\omega\right)B_{\alpha}\left(t-s\right)\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\left(\sum_{\beta,\omega^{\prime}}e^{-i\omega^{\prime}\left(t\right)}\hat{A}_{\beta}\left(\omega^{\prime}\right)B_{\beta}\left(t\right)\right)\\
+ & \quad\qquad\qquad-\left(\sum_{\beta,\omega^{\prime}}e^{-i\omega^{\prime}\left(t\right)}\hat{A}_{\beta}\left(\omega^{\prime}\right)B_{\beta}\left(t\right)\right)\left(\sum_{\alpha,\omega}e^{-i\omega\left(t-s\right)}\hat{A}_{\alpha}\left(\omega\right)B_{\alpha}\left(t-s\right)\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\\
+ & \quad\qquad\qquad+\text{h.c.}\bigg\}\\
+ & =\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\bigg\{\left(\sum_{\alpha,\omega}e^{-i\omega\left(t-s\right)}\hat{A}_{\alpha}\left(\omega\right)B_{\alpha}\left(t-s\right)\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\left(\sum_{\beta,\omega^{\prime}}e^{-i\omega^{\prime}\left(t\right)}\hat{A}_{\beta}\left(\omega^{\prime}\right)B_{\beta}\left(t\right)\right)\\
+ & \quad\qquad\qquad-\left(\sum_{\beta,\omega^{\prime}}e^{-i\omega^{\prime}\left(t\right)}\hat{A}_{\beta}\left(\omega^{\prime}\right)B_{\beta}\left(t\right)\right)\left(\sum_{\alpha,\omega}e^{-i\omega\left(t-s\right)}\hat{A}_{\alpha}\left(\omega\right)B_{\alpha}\left(t-s\right)\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\\
+ & \quad\qquad\qquad+\text{h.c.}\bigg\}\\
+ & =\frac{1}{\hbar^{2}}\int_{0}^{\infty}ds\,\text{tr}_{B}\,\bigg\{\hat{H}_{I}\left(t-s\right)\hat{\rho}_{S}\left(t\right)\hat{\rho}_{B}\hat{H}_{I}\left(t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The time-evolution operator for the whole system is given by 
+\begin_inset Formula $\hat{U}\left(t,t_{0}\right)$
+\end_inset
+
+ given by 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Heisenberg picture
+\end_layout
+
+\begin_layout Itemize
+Transformation operator.
+ Define
+\begin_inset Formula 
+\[
+\hat{U}\left(t,t_{0}\right)=T_{\leftarrow}\exp\left[-i\int_{t_{0}}^{t}ds\,\hat{H}\left(s\right)\right],
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Square root of a matrix
+\begin_inset Formula 
+\[
+\hat{A}=\hat{P}^{-1}\hat{D}\hat{P}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What is 
+\begin_inset Formula $\hat{A}^{1/2}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+Imagine that
+\begin_inset Formula 
+\[
+\hat{A}^{\beta}=\hat{P}^{-1}\hat{D}^{\beta}\hat{P}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then:
+\begin_inset Formula 
+\[
+\hat{A}^{1/2}=\hat{P}^{-1}\hat{D}^{1/2}\hat{P}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Verify that 
+\begin_inset Formula $\hat{A}=\left(\hat{A}^{1/2}\right)^{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\left(\hat{A}^{1/2}\right)^{2} & =\hat{P}^{-1}\hat{D}^{1/2}\hat{P}\hat{P}^{-1}\hat{D}^{1/2}\hat{P}=\hat{P}^{-1}\hat{D}^{1/2}\hat{D}^{1/2}\hat{P}\\
+ & =\hat{P}^{-1}\hat{D}\hat{P}\\
+ & =\hat{A}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Equations for Holstein's Molecular Crystal Model
+\end_layout
+
+\begin_layout Itemize
+The wave function is a superposition
+\begin_inset Formula 
+\[
+\psi\left(\mathbf{r},x_{1},\ldots,x_{N}\right)=\sum_{n}a_{n}\left(x_{1},\ldots,x_{N}\right)\phi\left(\mathbf{r}-n\mathbf{a},x_{n}\right)
+\]
+
+\end_inset
+
+of electronic wave functions
+\begin_inset Formula 
+\[
+\phi\left(\mathbf{r}-n\mathbf{a},x_{n}\right)
+\]
+
+\end_inset
+
+localized at the 
+\begin_inset Formula $n$
+\end_inset
+
+-th site with lattice vector 
+\begin_inset Formula $\mathbf{a}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The weighting coefficients 
+\begin_inset Formula $a_{n}\left(x_{1},\ldots,x_{N}\right)$
+\end_inset
+
+ are functions of all internuclear displacements
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Apply tight-binding approximations to obtain:
+\begin_inset Formula 
+\begin{align*}
+\Bigg[i\hbar\frac{\partial}{\partial t} & -\sum_{m}\left(-\frac{\hbar^{2}}{2M}\frac{\partial^{2}}{\partial x_{m}^{2}}+\frac{1}{2}M\omega_{0}^{2}x_{m}^{2}\right)-E\left(x_{n}\right)-W_{n}\left(x_{1},\ldots,x_{N}\right)\bigg]a_{n}\left(x_{1},\ldots,x_{N}\right)\\
+ & =\sum_{\pm}J\left(x_{n},x_{n\pm1}\right)a_{n\pm1}\left(x_{1},\ldots,x_{N}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Terms
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $E\left(x_{n}\right)$
+\end_inset
+
+ is the electron energy of an isolated molecular ion, the system of the
+ electron and an isolated molecule
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $W_{n}\left(x_{1},\ldots,x_{N}\right)$
+\end_inset
+
+ are perturbations on 
+\begin_inset Formula $E\left(x_{n}\right)$
+\end_inset
+
+ due to the presence of other molecules
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $J\left(x_{n},x_{n\pm1}\right)$
+\end_inset
+
+ are overlap integrals between sites 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $n\pm1$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: if internuclear coordinates all are forzen at 
+\begin_inset Formula $x$
+\end_inset
+
+, then the system becomes equivalent to the tight-binding case
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Localized states 
+\begin_inset Formula $\phi\left(\mathbf{r}-n\mathbf{a},x\right)$
+\end_inset
+
+ form a degenerate set
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By the translational symmetry of the system, stationary states take the
+ form
+\begin_inset Formula 
+\[
+a_{n}^{\left(k\right)}=e^{ikn}
+\]
+
+\end_inset
+
+with eigenvalues
+\begin_inset Formula 
+\[
+E_{k}=E\left(x\right)+W+\left(\frac{N}{2}\right)M\omega_{0}^{2}x^{2}-2J\cos k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $J\left(x_{n},x_{n\pm1}\right)$
+\end_inset
+
+ is set to a negative constant 
+\begin_inset Formula $-J$
+\end_inset
+
+ and
+\begin_inset Formula 
+\[
+W=W\left(x_{1},x_{2},\ldots,x_{N}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Group velocities are
+\begin_inset Formula 
+\[
+V_{k}=\frac{a}{\hbar}\frac{\partial E_{k}}{\partial k}=-\frac{2Ja}{\hbar}\sin k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The system exhibits a typical band character, with band extrema at 
+\begin_inset Formula $k=0,\pi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The motion may be described in terms of an effective mass
+\begin_inset Formula 
+\[
+m^{\ast}=\left(\frac{a}{\hbar}\frac{\partial v_{k}}{\partial k}\right)^{-1}=\pm\frac{\hbar^{2}}{2Ja^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Further approximations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $W_{n}\left(x_{1},x_{2},\ldots,x_{N}\right)\sim0$
+\end_inset
+
+ (neglect these)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+When the electron is on site 
+\begin_inset Formula $n$
+\end_inset
+
+, the perturbation of its expectation-energy due to the potential of other
+ molecules is negligible
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Neglect the 
+\begin_inset Formula $x$
+\end_inset
+
+-dependence (or, perhaps, the 
+\begin_inset Formula $n$
+\end_inset
+
+-dependence) of 
+\begin_inset Formula $J\left(x_{n},x_{n\pm1}\right)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+J\left(x_{n},x_{n\pm1}\right)=-J
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These energies are small relative to other energies found in the problem
+\end_layout
+
+\begin_layout Itemize
+It is reasonable to ignore the 
+\begin_inset Formula $x$
+\end_inset
+
+-dependence of 
+\begin_inset Formula $J$
+\end_inset
+
+, at the outset, anyway.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Assume that the 
+\begin_inset Formula $x$
+\end_inset
+
+-dependence of 
+\begin_inset Formula $E\left(x_{n}\right)$
+\end_inset
+
+ is linear
+\begin_inset Formula 
+\[
+E\left(x_{n}\right)=-Ax_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Result:
+\begin_inset Formula 
+\begin{align}
+\Bigg[i\hbar\frac{\partial}{\partial t} & -\sum_{m}\left(-\frac{\hbar^{2}}{2M}\frac{\partial^{2}}{\partial x_{m}^{2}}+\frac{1}{2}M\omega_{0}^{2}x_{m}^{2}\right)+Ax_{n}\bigg]a_{n}\left(x_{1},\ldots,x_{N}\right)\nonumber \\
+ & +J\left(a_{n-1}+a_{n+1}\right)=0\label{eq:PolaronModelReduced}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Large-polaron limit:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear dimensions of polaron are large compared to lattice spacing
+\end_layout
+
+\begin_layout Itemize
+The wave function 
+\begin_inset Formula $a_{n}\left(x_{1},\ldots,x_{N}\right)$
+\end_inset
+
+ is a continuous, differentiable function of a continuous position variable:
+\begin_inset Formula 
+\[
+a_{n+1}=a_{n}+\frac{\partial a_{n}}{\partial n}+\frac{1}{2}\frac{\partial^{2}a_{n}}{\partial n^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A stationary equivalent
+\begin_inset Formula 
+\begin{align}
+E\left(x_{1},\ldots,x_{N}\right)a_{n}\left(x_{1},\ldots,x_{N}\right)=\frac{1}{2} & \sum_{m}\left(M\omega_{0}^{2}x_{m}^{2}-Ax_{n}\right)\bigg]a_{n}\left(x_{1},\ldots,x_{N}\right)\nonumber \\
+ & -J\left(a_{n-1}+a_{n+1}\right)\label{eq:PolaronModelReducedStationary}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, we neglect the vibrational kinetic energy
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now we have energy eigenvalue 
+\begin_inset Formula $E\left(x_{1},\ldots,x_{N}\right)$
+\end_inset
+
+ which is a parametric function of vibration coordinates 
+\begin_inset Formula $\left\{ x_{n}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We seek the 
+\begin_inset Formula $\left\{ x_{n}\right\} $
+\end_inset
+
+ that minimize 
+\begin_inset Formula $E\left(x_{1},\ldots,x_{N}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Multiply (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronModelReducedStationary"
+
+\end_inset
+
+) by 
+\begin_inset Formula $a_{n}^{\ast}$
+\end_inset
+
+ and sum over 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+E\left(x_{1},\ldots,x_{N}\right)= & \frac{1}{2}\sum_{m}M\omega_{0}^{2}x_{m}^{2}-\sum_{n}Ax_{n}\left|a_{n}\right|^{2}\nonumber \\
+ & +\sum_{n}J\left(a_{n-1}+a_{n+1}\right)a_{n}^{\ast}\label{eq:PolaronModelReducedStationarySoln}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The normalization condition has been used
+\begin_inset Formula 
+\[
+\sum_{n}\left|a_{n}\right|^{2}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Differentiate (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PolaronModelReducedStationarySoln"
+
+\end_inset
+
+) with respect to a given vibrational coordinate, 
+\begin_inset Formula $x_{p}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial E\left(x_{1},\ldots,x_{N}\right)}{\partial x_{p}} & =M\omega_{0}^{2}x_{p}-A\left|a_{p}\right|^{2}\\
+ & \quad+\sum_{n}\frac{\partial a_{n}^{\ast}}{\partial x_{p}}\left[-Ax_{n}a_{n}-J\left(a_{n-1}+a_{n+1}\right)+\lambda a_{n}\right]\\
+ & \quad+\sum_{n}\frac{\partial a_{n}}{\partial x_{p}}\left[-Ax_{n}a_{n}^{\ast}-J\left(a_{n-1}^{\ast}+a_{n+1}^{\ast}\right)+\lambda a_{n}^{\ast}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
