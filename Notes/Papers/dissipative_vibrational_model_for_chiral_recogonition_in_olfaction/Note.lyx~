@@ -781,11 +781,123 @@ Then
  becomes:
 \begin_inset Formula 
 \[
-\hat{U}^{\dagger}\hat{H}_{o}\hat{U}=exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]\left\{ \left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cos\left(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}\right)-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sin(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right\} exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\hat{U}^{\dagger}\hat{H}_{o}\hat{U}=-\frac{1}{2}exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]\left\{ \left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cos\left(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}\right)-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sin(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right\} exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
 \]
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Enumerate
+Zoom in on the middle term:
+\begin_inset Formula 
+\[
+\left(\delta\hat{\sigma}_{x}+\omega_{z}\hat{\sigma}_{z}\right)cos\left(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}\right)-\left(\delta\hat{\sigma}_{z}-\omega_{z}\hat{\sigma}_{x}\right)sin(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})
+\]
+
+\end_inset
+
+Zoom in on the 
+\begin_inset Formula $cos$
+\end_inset
+
+ term:
+\begin_inset Formula 
+\[
+cos\left(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}\right)=cos(\lambda'\hat{P}_{D})cos(\lambda\hat{P}_{A})+sin(\lambda'\hat{P}_{D})sin(\lambda\hat{P}_{A})
+\]
+
+\end_inset
+
+The Taylor expansion of 
+\begin_inset Formula $cos(\theta\hat{P})$
+\end_inset
+
+ and 
+\begin_inset Formula $sin(\theta\hat{P})$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+cos(\theta\hat{P})=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{(2n)!}(\theta\hat{P})^{2n}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\sum_{n=0}^{\infty}\frac{(-1)^{n}}{(2n)!}\theta^{2n}\hat{P}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=cos(\theta)\hat{P}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+sin(\theta\hat{P})=\sum_{n=0}^{\infty}\frac{(-1)^{2n+1}}{(2n+1)!}(\theta\hat{P})^{2n+1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\sum_{n=0}^{\infty}\frac{(-1)^{2n+1}}{(2n+1)!}\theta^{2n+1}\hat{P}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=sin(\theta)\hat{P}
+\]
+
+\end_inset
+
+Then:
+\begin_inset Formula 
+\[
+cos\left(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}\right)=cos(\lambda'\hat{P}_{D})cos(\lambda\hat{P}_{A})+sin(\lambda'\hat{P}_{D})sin(\lambda\hat{P}_{A})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=cos(\lambda')\hat{P}_{D}cos(\lambda)\hat{P}_{A}+sin(\lambda')\hat{P}_{D}sin(\lambda)\hat{P}_{A}
+\]
+
+\end_inset
+
+Projection operators cancel each other.
+\end_layout
+
+\begin_layout Enumerate
+Then:
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\hat{H}_{o}\hat{U}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
 
 \end_layout
 
@@ -799,6 +911,22 @@ Cummute
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Next deal with 
+\begin_inset Formula $\hat{U}^{\dagger}\hat{H}_{E}\hat{U}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{U}^{\dagger}\hat{H}_{E}\hat{U}=exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left\{ \sum_{i}\omega_{i}\hat{b}_{i}^{\dagger}\hat{b}_{i}\right\} exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \end_deeper
 \end_deeper
