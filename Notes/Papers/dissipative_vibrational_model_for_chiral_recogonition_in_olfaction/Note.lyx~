@@ -920,6 +920,22 @@ Next deal with
 
 \end_inset
 
+Hilbert space analysis:
+\begin_inset Formula 
+\[
+=exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]\cancel{exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]}\left\{ \sum_{i}\omega_{i}\hat{b}_{i}^{\dagger}\hat{b}_{i}\right\} \cancel{exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]}exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]\left\{ \sum_{i}\omega_{i}\hat{b}_{i}^{\dagger}\hat{b}_{i}\right\} exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\]
+
+\end_inset
+
 
 \end_layout
 
