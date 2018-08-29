@@ -995,6 +995,241 @@ exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{i
 
 \end_layout
 
+\begin_layout Itemize
+Follow the logic from previous odd and even analysis, first focus on the
+ middle:
+\begin_inset Formula 
+\[
+exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left[(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}\right]exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Focus on:
+\begin_inset Formula 
+\[
+\left[(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}\right]exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Matrix exponential expansion:
+\begin_inset Formula 
+\[
+\left[(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}\right]\sum_{k=0}^{\infty}\frac{1}{k!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Separate the odds and even terms, even terms have a 
+\begin_inset Formula $\hat{\delta}_{x}$
+\end_inset
+
+, and odd terms have a 
+\begin_inset Formula $i\hat{\delta}_{z}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+=(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}\sum_{k=0}^{\infty}\frac{1}{(2k)!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{2k}+i(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}\sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{2k+1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+i(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then:
+\begin_inset Formula 
+\[
+exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left[(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}\right]exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left\{ (\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]+i(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=term_{1}+term_{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+term_{1}=exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ \sum_{k=0}^{\infty}\frac{1}{(2k)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{2k}(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} +\left\{ \sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{2k+1}(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} +i\left\{ sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ cos\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}cos\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} +\left\{ sin\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}cos\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+term_{2}=exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]i(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ \sum_{k=0}^{\infty}\frac{1}{(2k)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{2k}i(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} +\left\{ \sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]^{2k+1}i(\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=i\left\{ cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} +\left\{ sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}sinh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ cos\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{z}sin\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} -\left\{ sin\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right](\gamma_{D}\hat{P}_{D}+\gamma_{A}\hat{P}_{A})\hat{\delta}_{x}sin\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now there are 
+\begin_inset Formula $sin$
+\end_inset
+
+ and 
+\begin_inset Formula $cos$
+\end_inset
+
+ terms, these terms goes directly to zero.
+ The second term:
+\begin_inset Formula 
+\[
+exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left[(\gamma_{D}\ket{D}\bra{D}+\gamma_{A}\ket{A}\bra{A})\hat{\delta}_{x}\right]exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Third term:
+\begin_inset Formula 
+\[
+exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left[\sum_{i}(\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A})(\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hilbert space analysis:
+\begin_inset Formula 
+\[
+exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left[\sum_{i}(\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A})(\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(-\hat{b}_{i}^{\dagger}+\hat{b}_{i})\right]exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]\left[\sum_{i}(\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A})\right]exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right](\hat{b}_{i}^{\dagger}+\hat{b}_{i})exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{iA}}{\omega_{i}}\hat{P}_{A}\right)(\hat{b}_{i}^{\dagger}-\hat{b}_{i})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Focus on the middle and loss the summation because it does not effect the
+ result:
+\begin_inset Formula 
+\[
+exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right](\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A})exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_deeper
 \end_body

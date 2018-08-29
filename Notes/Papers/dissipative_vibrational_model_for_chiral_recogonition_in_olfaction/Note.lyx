@@ -1209,19 +1209,11 @@ exp\left[\sum_{i}\left(\frac{\gamma_{iD}}{\omega_{i}}\hat{P}_{D}+\frac{\gamma_{i
 \end_layout
 
 \begin_layout Itemize
-Focus on the middle and loss the summation because it does not effect the
- result:
+Focus on the middle and loss the summation for now because it does not effect
+ the result:
 \begin_inset Formula 
 \[
-exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right](\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A})exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-=
+exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right](\gamma_{iD}\hat{P}_{D}+\gamma_{iA}\hat{P}_{A})exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]=0
 \]
 
 \end_inset
@@ -1230,6 +1222,100 @@ exp\left[-\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\ri
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Itemize
+Closely look into the polaron transformation.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+this term:
+\begin_inset Formula 
+\[
+exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]=expm(iA)=cos(A)+isin(A)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=cos\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]+isin\left[\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]
+\]
+
+\end_inset
+
+Also, do the even and odd analysis:
+\begin_inset Formula 
+\[
+exp\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right]=\sum_{k=0}^{\infty}\frac{1}{(2k)!}\left(\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right)^{2k}+\sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left(\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right)^{2k+1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=cosh(iA)+sinh(iA)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=cos(A)-isin(A)
+\]
+
+\end_inset
+
+Do these agree with each other?
+\end_layout
+
+\begin_layout Itemize
+Another thing is that in any one of the form above:
+\begin_inset Formula 
+\[
+\sum_{k=0}^{\infty}\frac{1}{(2k)!}\left(\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right)^{2k}=\sum_{k=0}^{\infty}\frac{1}{(2k)!}\left(\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right)^{2k}=cosh\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=cos(\frac{1}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}))=cos(\frac{1}{2}\lambda'\hat{P}_{D})cos(\frac{1}{2}\lambda\hat{P}_{A})+sin(\frac{1}{2}\lambda'\hat{P}_{D})sin(\frac{1}{2}\lambda\hat{P}_{A})
+\]
+
+\end_inset
+
+Then by Taylor expansion,
+\begin_inset Formula 
+\[
+=cos(\frac{\lambda'}{2})\hat{P}_{D}cos(\frac{\lambda}{2})\hat{P}_{A}+sin(\frac{\lambda'}{2})\hat{P}_{D}sin(\frac{\lambda}{2})\hat{P}_{A}=0
+\]
+
+\end_inset
+
+And the other:
+\begin_inset Formula 
+\[
+\sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left(\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\hat{\delta}_{y}\right)^{2k+1}=\sum_{k=0}^{\infty}\frac{1}{(2k+1)!}\left(\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right)^{2k+1}\hat{\delta}_{y}=sinh(\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A}))\hat{\delta}_{y}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ -isin\left[\frac{i}{2}(\lambda'\hat{P}_{D}-\lambda\hat{P}_{A})\right]\right\} \hat{\delta}_{y}
+\]
+
+\end_inset
+
+Then again it could be shown that this term is 0 also?
+\end_layout
+
 \end_deeper
 \end_deeper
 \end_body
